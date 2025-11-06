@@ -7,27 +7,32 @@ import Photo from "../../assets/Photo.png";
 const OurCompany = () => {
   return (
     <div
+      className="rounded-b-[100px] bg-[#D9D9D9] shadow-lg"
       style={{
         background:
           "linear-gradient(180deg, #1D0F35 2%, #B790FF 54%, #FFFFFF 100%)",
       }}
     >
       <h1
-        className="text-center text-[32px] text-white pt-22 pb-15"
+        className="text-center text-[32px] text-white pt-[88px] pb-[22px]"
         style={{ textShadow: "0px 4px 3.1px rgba(0,0,0,0.25)" }}
       >
         บริษัทของเราสามารถทำได้ทุกอย่าง
       </h1>
       <div className="flex justify-center pb-[73px] gap-24">
         <div>
-          <img src={TwoD} alt="TwoD" className="w-35 h-35 hover:scale-110 bg-white rounded-full" />
+          <img
+            src={TwoD}
+            alt="TwoD"
+            className="w-[140px] h-[140px] hover:scale-110"
+          />
           <p className="text-center text-xl">2D</p>
         </div>
         <div>
           <img
             src={ThreeD}
             alt="ThreeD"
-            className="w-35 h-35 hover:scale-110 bg-white rounded-full"
+            className="w-[140px] h-[140px] hover:scale-110"
           />
           <p className="text-center text-xl">3D</p>
         </div>
@@ -35,12 +40,16 @@ const OurCompany = () => {
           <img
             src={Motion}
             alt="Motion"
-            className="w-35 h-35 hover:scale-110 bg-white rounded-full"
+            className="w-[140px] h-[140px] hover:scale-110"
           />
           <p className="text-center text-xl">Motion</p>
         </div>
         <div>
-          <img src={Photo} alt="Photo" className="w-35 h-35 hover:scale-110 bg-white rounded-full" />
+          <img
+            src={Photo}
+            alt="Photo"
+            className="w-[140px] h-[140px] hover:scale-110"
+          />
           <p className="text-center text-xl">Photo</p>
         </div>
       </div>

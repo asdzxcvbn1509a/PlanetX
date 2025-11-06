@@ -24,10 +24,10 @@ const SwiperHome = () => {
           <img src={Easy} alt="Easy" className="w-full" />
         </SwiperSlide>
         <SwiperSlide className="">
-          <img src={Design} alt="Design" className="w-full"/>
+          <img src={Design} alt="Design" className="w-full" />
         </SwiperSlide>
         <SwiperSlide className="">
-          <img src={Production} alt="Production" className="w-full"/>
+          <img src={Production} alt="Production" className="w-full" />
         </SwiperSlide>
       </Swiper>
     </div>

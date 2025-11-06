@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <div
-      className="h-22"
+      className="h-[88px]"
       style={{
         background:
           "linear-gradient(180deg, #42327D 0%, #533F85 11%, #0F022D 80%)",
