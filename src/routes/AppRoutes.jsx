@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "../pages/Home";
 import Services from "../pages/Services";
 import AboutUs from "../pages/AboutUs";
@@ -15,10 +15,19 @@ import ShirtPatternDesign from "../pages/Services/ShirtPatternDesign";
 import MotionGraphic from "../pages/Services/MotionGraphic";
 import Photo from "../pages/Services/Photo";
 
+const Layout = () => {
+  return (
+    <div>
+      <Nav />
+      <Outlet />
+    </div>
+  );
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Nav />,
+    element: <Layout />,
     children: [
       { index: true, element: <Home /> },
       { path: "services", element: <Services /> },
