@@ -1,5 +1,4 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import NavLogo from "../assets/NavLogo.png";
 import { Search } from "lucide-react";
 import Switch from "../Component/Switch";
@@ -8,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <div
-      className="h-[88px]"
+      className="h-[88px] fixed top-0 left-0 w-full z-50"
       style={{
         background:
           "linear-gradient(180deg, #42327D 0%, #533F85 11%, #0F022D 80%)",
@@ -67,8 +66,6 @@ const Nav = () => {
           <div className="flex my-auto">
             <input
               type="text"
-              name=""
-              id=""
               placeholder="ค้นหา"
               className="bg-white w-[238.71px] text-base pl-[15px] h-10 outline-none"
             />
@@ -79,7 +76,6 @@ const Nav = () => {
           <Switch />
         </div>
       </div>
-      <Outlet />
     </div>
   );
 };

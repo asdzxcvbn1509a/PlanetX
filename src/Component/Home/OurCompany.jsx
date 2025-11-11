@@ -26,7 +26,7 @@ const OurCompany = () => {
             alt="TwoD"
             className="w-[140px] h-[140px] hover:scale-110"
           />
-          <p className="text-center text-xl">2D</p>
+          <p className="text-center text-xl text-[#241347]">2D</p>
         </div>
         <div>
           <img
@@ -34,7 +34,7 @@ const OurCompany = () => {
             alt="ThreeD"
             className="w-[140px] h-[140px] hover:scale-110"
           />
-          <p className="text-center text-xl">3D</p>
+          <p className="text-center text-xl text-[#241347]">3D</p>
         </div>
         <div>
           <img
@@ -42,7 +42,7 @@ const OurCompany = () => {
             alt="Motion"
             className="w-[140px] h-[140px] hover:scale-110"
           />
-          <p className="text-center text-xl">Motion</p>
+          <p className="text-center text-xl text-[#241347]">Motion</p>
         </div>
         <div>
           <img
@@ -50,7 +50,7 @@ const OurCompany = () => {
             alt="Photo"
             className="w-[140px] h-[140px] hover:scale-110"
           />
-          <p className="text-center text-xl">Photo</p>
+          <p className="text-center text-xl text-[#241347]">Photo</p>
         </div>
       </div>
     </div>
