@@ -1,9 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import Easy from "../../assets/Easy.png";
-import Design from "../../assets/Design.png";
-import Production from "../../assets/Production.png";
+import Easy from "../../assets/Home/Easy.png";
+import Design from "../../assets/Home/Design.png";
+import Production from "../../assets/Home/Production.png";
 
 // Import Swiper styles
 import "swiper/css";

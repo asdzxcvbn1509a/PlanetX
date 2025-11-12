@@ -1,8 +1,8 @@
 import React from "react";
-import TwoD from "../../assets/TwoD.png";
-import ThreeD from "../../assets/ThreeD.png";
-import Motion from "../../assets/motion.png";
-import Photo from "../../assets/Photo.png";
+import TwoD from "../../assets/Home/TwoD.png";
+import ThreeD from "../../assets/Home/ThreeD.png";
+import Motion from "../../assets/Home/motion.png";
+import Photo from "../../assets/Home/Photo.png";
 
 const OurCompany = () => {
   return (

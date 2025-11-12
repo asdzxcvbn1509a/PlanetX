@@ -1,7 +1,7 @@
 import React from "react";
-import EasyToOrderImage from "../../assets/EasyToOrder.png";
-import EasyToEdit from "../../assets/EasyToEdit.png";
-import Garantee from "../../assets/Garantee.png";
+import EasyToOrderImage from "../../assets/Home/EasyToOrder.PNG";
+import EasyToEdit from "../../assets/Home/EasyToEdit.PNG";
+import Garantee from "../../assets/Home/Garantee.PNG";
 
 const EasyToOrder = () => {
   return (
