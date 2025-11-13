@@ -27,29 +27,39 @@ import Museum2 from "../../assets/Services/Illustration/Museum2.png";
 import Museum3 from "../../assets/Services/Illustration/Museum3.png";
 import Museum4 from "../../assets/Services/Illustration/Museum4.png";
 
-const Illustration = () => {
+const Illustration = ({ checkedStyle }) => {
   const slides = [
-    { type: "image", src: Sleep, alt: "Sleep" },
-    { type: "image", src: Kuma, alt: "Kuma" },
-    { type: "image", src: Sushi, alt: "Sushi" },
-    { type: "image", src: Tok, alt: "Tok" },
-    { type: "image", src: Kimbab, alt: "Kimbab" },
-    { type: "image", src: Corn, alt: "Corn" },
-    { type: "image", src: Breakfast, alt: "Breakfast" },
-    { type: "image", src: Curry, alt: "Curry" },
-    { type: "image", src: Ramen, alt: "Ramen" },
-    { type: "image", src: Ramen2, alt: "Ramen2" },
-    { type: "image", src: Tomyum, alt: "Tomyum" },
-    { type: "image", src: Padthai, alt: "Padthai" },
-    { type: "image", src: Mooping, alt: "Mooping" },
-    { type: "image", src: Game1, alt: "Game1" },
-    { type: "image", src: Game2, alt: "Game2" },
-    { type: "image", src: Game3, alt: "Game3" },
-    { type: "image", src: Museum1, alt: "Museum1" },
-    { type: "image", src: Museum2, alt: "Museum2" },
-    { type: "image", src: Museum3, alt: "Museum3" },
-    { type: "image", src: Museum4, alt: "Museum4" },
+    { type: "image", src: Sleep, alt: "Sleep", style: "cartoon" },
+    { type: "image", src: Kuma, alt: "Kuma", style: "cartoon" },
+    { type: "image", src: Sushi, alt: "Sushi", style: "cartoon" },
+    { type: "image", src: Tok, alt: "Tok", style: "cartoon" },
+    { type: "image", src: Kimbab, alt: "Kimbab", style: "cartoon" },
+    { type: "image", src: Corn, alt: "Corn", style: "cartoon" },
+    { type: "image", src: Breakfast, alt: "Breakfast", style: "cartoon" },
+    { type: "image", src: Curry, alt: "Curry", style: "cartoon" },
+    { type: "image", src: Ramen, alt: "Ramen", style: "cartoon" },
+    { type: "image", src: Ramen2, alt: "Ramen2", style: "cartoon" },
+    { type: "image", src: Tomyum, alt: "Tomyum", style: "cartoon" },
+    { type: "image", src: Padthai, alt: "Padthai", style: "cartoon" },
+    { type: "image", src: Mooping, alt: "Mooping", style: "cartoon" },
+    { type: "image", src: Game1, alt: "Game1", style: "cartoon" },
+    { type: "image", src: Game2, alt: "Game2", style: "cartoon" },
+    { type: "image", src: Game3, alt: "Game3", style: "cartoon" },
+    { type: "image", src: Museum1, alt: "Museum1", style: "cartoon" },
+    { type: "image", src: Museum2, alt: "Museum2", style: "cartoon" },
+    { type: "image", src: Museum3, alt: "Museum3", style: "cartoon" },
+    { type: "image", src: Museum4, alt: "Museum4", style: "cartoon" },
   ];
+
+  const stylesSelected = Object.keys(checkedStyle).filter(
+    (key) => checkedStyle[key]
+  );
+
+  const filteredSlides =
+    stylesSelected.length === 0
+      ? slides
+      : slides.filter((item) => stylesSelected.includes(item.style));
+
   return (
     <div>
       <h1 className="text-xl mt-[13px] mb-6">ภาพประกอบ</h1>
@@ -63,7 +73,7 @@ const Illustration = () => {
         modules={[Pagination, Navigation]}
         className="max-w-[1264px] !ml-0"
       >
-        {slides.map((item, index) => (
+        {filteredSlides.map((item, index) => (
           <SwiperSlide key={index}>
             {item.type === "image" ? (
               <img

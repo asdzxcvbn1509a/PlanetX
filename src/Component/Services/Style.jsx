@@ -1,21 +1,8 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const Style = () => {
+const Style = ({ checkedStyle, onChange }) => {
   const [isOpen, setIsOpen] = useState(true);
-
-  const [checkedItems, setCheckedItems] = useState({
-    minimal: false,
-    cartoon: false,
-    pixelArt: false,
-  });
-
-  const handleCheckboxChange = (key) => {
-    setCheckedItems((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
 
   return (
     <div>
@@ -46,8 +33,8 @@ const Style = () => {
                 <input
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
-                  checked={checkedItems.minimal}
-                  onChange={() => handleCheckboxChange("minimal")}
+                  checked={checkedStyle.minimal || false}
+                  onChange={() => onChange("minimal")}
                 />
                 มินิมอล
               </label>
@@ -55,8 +42,8 @@ const Style = () => {
                 <input
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
-                  checked={checkedItems.cartoon}
-                  onChange={() => handleCheckboxChange("cartoon")}
+                  checked={checkedStyle.cartoon || false}
+                  onChange={() => onChange("cartoon")}
                 />
                 การ์ตูน
               </label>
@@ -64,8 +51,8 @@ const Style = () => {
                 <input
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
-                  checked={checkedItems.pixelArt}
-                  onChange={() => handleCheckboxChange("pixelArt")}
+                  checked={checkedStyle.pixelArt || false}
+                  onChange={() => onChange("pixelArt")}
                 />
                 พิกเซลอาร์ต
               </label>

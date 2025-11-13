@@ -18,20 +18,30 @@ import Way from "../../assets/Services/Logo/Way.png";
 import Diamond from "../../assets/Services/Logo/Diamond.png";
 import Modern from "../../assets/Services/Logo/Modern.png";
 
-const Logo = () => {
+const Logo = ({ checkedStyle }) => {
   const slides = [
-    { type: "image", src: Sixty, alt: "Sixty" },
-    { type: "image", src: Sweet, alt: "Sweet" },
-    { type: "image", src: Kmutt, alt: "Kmutt" },
-    { type: "image", src: Night, alt: "Night" },
-    { type: "image", src: Cheer, alt: "Cheer" },
-    { type: "image", src: BBQ, alt: "BBQ" },
-    { type: "image", src: Shell, alt: "Shell" },
-    { type: "image", src: Sex, alt: "Sea" },
-    { type: "image", src: Way, alt: "Way" },
-    { type: "image", src: Diamond, alt: "Diamond" },
-    { type: "image", src: Modern, alt: "Modern" },
+    { type: "image", src: Sixty, alt: "Sixty", style: "minimal" },
+    { type: "image", src: Sweet, alt: "Sweet", style: "minimal" },
+    { type: "image", src: Kmutt, alt: "Kmutt", style: "minimal" },
+    { type: "image", src: Night, alt: "Night", style: "minimal" },
+    { type: "image", src: Cheer, alt: "Cheer", style: "minimal" },
+    { type: "image", src: BBQ, alt: "BBQ", style: "minimal" },
+    { type: "image", src: Shell, alt: "Shell", style: "minimal" },
+    { type: "image", src: Sex, alt: "Sea", style: "minimal" },
+    { type: "image", src: Way, alt: "Way", style: "minimal" },
+    { type: "image", src: Diamond, alt: "Diamond", style: "minimal" },
+    { type: "image", src: Modern, alt: "Modern", style: "minimal" },
   ];
+
+  const stylesSelected = Object.keys(checkedStyle).filter(
+    (key) => checkedStyle[key]
+  );
+
+  const filteredSlides =
+    stylesSelected.length === 0
+      ? slides
+      : slides.filter((item) => stylesSelected.includes(item.style));
+
   return (
     <div>
       <h1 className="text-xl mt-[13px] mb-6">โลโก้</h1>
@@ -45,7 +55,7 @@ const Logo = () => {
         modules={[Pagination, Navigation]}
         className="max-w-[1264px] !ml-0"
       >
-        {slides.map((item, index) => (
+        {filteredSlides.map((item, index) => (
           <SwiperSlide key={index}>
             {item.type === "image" ? (
               <img

@@ -1,15 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Type from "../Component/Services/Type";
 import { Funnel } from "lucide-react";
+import Type from "../Component/Services/Type";
 import Style from "../Component/Services/Style";
 import Purpose from "../Component/Services/Purpose";
 import Period from "../Component/Services/Period";
 import TreeD from "../Component/Services/TreeD";
 import Logo from "../Component/Services/Logo";
 import Illustration from "../Component/Services/Illustration";
+import Poster from "../Component/Services/Poster";
+import Character from "../Component/Services/Character";
+import ShirtPattern from "../Component/Services/ShirtPattern";
+import Motion from "../Component/Services/Motion";
+import Photo from "../Component/Services/Photo";
 
 const Services = () => {
+  // 🟣 state เก็บค่าที่ checkbox ถูกติ๊ก
+  const [checkedType, setCheckedType] = useState({
+    treeD: false,
+    logo: false,
+    illustration: false,
+    poster: false,
+    character: false,
+    shirt: false,
+    motion: false,
+    photo: false,
+  });
+
+  const [checkedStyle, setCheckedStyle] = useState({
+    minimal: false,
+    cartoon: false,
+    pixelArt: false,
+  });
+
+  // 🟢 ฟังก์ชันอัปเดตค่า checkbox
+  const handleTypeChange = (key) => {
+    setCheckedType((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
+  const handleStyleChange = (key) => {
+    setCheckedStyle((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
+  // 🧠 ถ้ามีติ๊กอันไหนไว้ จะกรองเฉพาะอันนั้น
+  const isAnyChecked = Object.values(checkedType).some((v) => v);
+
   return (
     <div className="pt-[88px] ml-[88px]">
       <div className="flex mb-[32px] mt-[16px]">
@@ -21,29 +62,59 @@ const Services = () => {
           บริการ
         </a>
       </div>
+
       <div className="flex gap-[8px] mb-[16px]">
         <Funnel size={32} strokeWidth={3} className="text-[#312070]" />
         <h1 className="text-[#303030] text-2xl">ค้นหาแบบละเอียด</h1>
       </div>
-      <div className="flex gap-6">
-        {/* Sidebar with filters */}
+
+      <div className="flex gap-6 items-start">
+        {/* Sidebar */}
         <div className="grid gap-4 w-[229px] shrink-0">
-          <Type />
-          <Style />
+          <Type checkedType={checkedType} onChange={handleTypeChange} />
+          <Style checkedStyle={checkedStyle} onChange={handleStyleChange} />
           <Purpose />
           <Period />
         </div>
-        {/* Main content area */}
+
+        {/* Main content */}
         <div className="flex-1">
           <div className="-mt-14">
             <h1 className="text-[32px] text-[#493678] font-semibold mb-2">
               ออกแบบ
             </h1>
             <hr className="text-[#303030] max-w-[1260px]" />
-            <TreeD />
-            <Logo />
-            <Illustration />
+
+            {/* 🩷 ฟิลเตอร์แสดงเฉพาะที่เลือกไว้ */}
+            {(!isAnyChecked || checkedType.treeD) && (
+              <TreeD checkedStyle={checkedStyle} />
+            )}
+            {(!isAnyChecked || checkedType.logo) && (
+              <Logo checkedStyle={checkedStyle} />
+            )}
+            {(!isAnyChecked || checkedType.illustration) && (
+              <Illustration checkedStyle={checkedStyle} />
+            )}
+            {(!isAnyChecked || checkedType.poster) && (
+              <Poster checkedStyle={checkedStyle} />
+            )}
+            {(!isAnyChecked || checkedType.character) && (
+              <Character checkedStyle={checkedStyle} />
+            )}
+            {(!isAnyChecked || checkedType.shirt) && (
+              <ShirtPattern checkedStyle={checkedStyle} />
+            )}
+
+            <h1 className="text-[32px] text-[#493678] font-semibold mb-2 mt-4">
+              โปรดักชั่น
+            </h1>
+            <hr className="text-[#303030] max-w-[1260px]" />
+            {(!isAnyChecked || checkedType.motion) && <Motion />}
+            {(!isAnyChecked || checkedType.photo) && (
+              <Photo checkedStyle={checkedStyle} />
+            )}
           </div>
+
           <Outlet />
         </div>
       </div>
