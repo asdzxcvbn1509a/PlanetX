@@ -1,23 +1,9 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const Purpose = () => {
+const Purpose = ({ checkedPurpose, onChange }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const [checkedItems, setCheckedItems] = useState({
-    promotion: false,
-    education: false,
-    socialMedia: false,
-    game: false,
-    personalArt: false,
-    brand: false,
-  });
 
-  const handleCheckboxChange = (key) => {
-    setCheckedItems((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
   return (
     <div>
       <button
@@ -45,17 +31,17 @@ const Purpose = () => {
             <div className="grid gap-[10px] pt-[12px] pl-[12px] pb-[12px]">
               <label className="text-base font-light cursor-pointer">
                 <input
-                  checked={checkedItems.promotion}
-                  onChange={() => handleCheckboxChange("promotion")}
+                  checked={checkedPurpose.promotion}
+                  onChange={() => onChange("promotion")}
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
                 />
-                โปรโมชั่นสินค้า
+                โปรโมทสินค้า
               </label>
               <label className="text-base font-light cursor-pointer">
                 <input
-                  checked={checkedItems.education}
-                  onChange={() => handleCheckboxChange("education")}
+                  checked={checkedPurpose.education}
+                  onChange={() => onChange("education")}
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
                 />
@@ -65,8 +51,8 @@ const Purpose = () => {
                 <input
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
-                  checked={checkedItems.socialMedia}
-                  onChange={() => handleCheckboxChange("socialMedia")}
+                  checked={checkedPurpose.socialMedia}
+                  onChange={() => onChange("socialMedia")}
                 />
                 โซเชียลมีเดีย
               </label>
@@ -74,8 +60,8 @@ const Purpose = () => {
                 <input
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
-                  checked={checkedItems.game}
-                  onChange={() => handleCheckboxChange("game")}
+                  checked={checkedPurpose.game}
+                  onChange={() => onChange("game")}
                 />
                 เกม
               </label>
@@ -83,8 +69,8 @@ const Purpose = () => {
                 <input
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
-                  checked={checkedItems.personalArt}
-                  onChange={() => handleCheckboxChange("personalArt")}
+                  checked={checkedPurpose.personalArt}
+                  onChange={() => onChange("personalArt")}
                 />
                 ศิลปะส่วนบุคคล
               </label>
@@ -92,8 +78,8 @@ const Purpose = () => {
                 <input
                   type="checkbox"
                   className="mr-[12px] cursor-pointer"
-                  checked={checkedItems.brand}
-                  onChange={() => handleCheckboxChange("brand")}
+                  checked={checkedPurpose.brand}
+                  onChange={() => onChange("brand")}
                 />
                 องค์กร / แบรนด์
               </label>

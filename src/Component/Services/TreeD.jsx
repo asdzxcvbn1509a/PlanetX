@@ -8,21 +8,46 @@ import Duck from "../../assets/Services/TreeD/Duck.png";
 import Pudding from "../../assets/Services/TreeD/Pudding.png";
 import Base from "../../assets/Services/TreeD/Base.mp4";
 
-const TreeD = ({ checkedStyle }) => {
+const TreeD = ({ checkedStyle, checkedPurpose }) => {
   const slides = [
-    { type: "image", src: Duck, alt: "Duck", style: "cartoon" },
-    { type: "image", src: Pudding, alt: "Pudding", style: "cartoon" },
-    { type: "video", src: Base, alt: "Base", style: "cartoon" },
+    {
+      type: "image",
+      src: Duck,
+      alt: "Duck",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Pudding,
+      alt: "Pudding",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "video",
+      src: Base,
+      alt: "Base",
+      style: "cartoon",
+      purpose: "promotion",
+    },
   ];
 
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
 
-  const filteredSlides =
-    stylesSelected.length === 0
-      ? slides
-      : slides.filter((item) => stylesSelected.includes(item.style));
+  const purposesSelected = Object.keys(checkedPurpose).filter(
+    (key) => checkedPurpose[key]
+  );
+
+  const filteredSlides = slides.filter((item) => {
+    const styleMatch =
+      stylesSelected.length === 0 || stylesSelected.includes(item.style);
+    const purposeMatch =
+      purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
+    return styleMatch && purposeMatch;
+  });
 
   return (
     <div>

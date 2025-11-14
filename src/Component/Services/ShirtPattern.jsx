@@ -12,23 +12,60 @@ import EightTeen from "../../assets/Services/ShirtPattern/EightTeen.png";
 import EightTeen2 from "../../assets/Services/ShirtPattern/EightTeen2.png";
 import Thep2 from "../../assets/Services/ShirtPattern/Thep2.png";
 
-const ShirtPattern = ({ checkedStyle }) => {
+const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
   const slides = [
-    { type: "image", src: SixtySix, alt: "SixtySix", style: "minimal" },
-    { type: "image", src: Thep, alt: "Thep", style: "minimal" },
-    { type: "image", src: EightTeen, altL: "EightTeen", style: "minimal" },
-    { type: "image", src: EightTeen2, alt: "EightTeen2", style: "minimal" },
-    { type: "image", src: Thep2, alt: "Thep2", style: "minimal" },
+    {
+      type: "image",
+      src: SixtySix,
+      alt: "SixtySix",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: Thep,
+      alt: "Thep",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: EightTeen,
+      altL: "EightTeen",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: EightTeen2,
+      alt: "EightTeen2",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: Thep2,
+      alt: "Thep2",
+      style: "minimal",
+      purpose: "brand",
+    },
   ];
 
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
 
-  const filteredSlides =
-    stylesSelected.length === 0
-      ? slides
-      : slides.filter((item) => stylesSelected.includes(item.style));
+  const purposesSelected = Object.keys(checkedPurpose).filter(
+    (key) => checkedPurpose[key]
+  );
+
+  const filteredSlides = slides.filter((item) => {
+    const styleMatch =
+      stylesSelected.length === 0 || stylesSelected.includes(item.style);
+    const purposeMach =
+      purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
+    return styleMatch && purposeMach;
+  });
 
   return (
     <div>

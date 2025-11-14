@@ -15,7 +15,6 @@ import Motion from "../Component/Services/Motion";
 import Photo from "../Component/Services/Photo";
 
 const Services = () => {
-  // 🟣 state เก็บค่าที่ checkbox ถูกติ๊ก
   const [checkedType, setCheckedType] = useState({
     treeD: false,
     logo: false,
@@ -33,7 +32,15 @@ const Services = () => {
     pixelArt: false,
   });
 
-  // 🟢 ฟังก์ชันอัปเดตค่า checkbox
+  const [checkedPurpose, setCheckedPurpose] = useState({
+    promotion: false,
+    education: false,
+    socialMedia: false,
+    game: false,
+    personalArt: false,
+    brand: false,
+  });
+
   const handleTypeChange = (key) => {
     setCheckedType((prev) => ({
       ...prev,
@@ -43,6 +50,13 @@ const Services = () => {
 
   const handleStyleChange = (key) => {
     setCheckedStyle((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
+  const handlePurposeChange = (key) => {
+    setCheckedPurpose((prev) => ({
       ...prev,
       [key]: !prev[key],
     }));
@@ -73,7 +87,10 @@ const Services = () => {
         <div className="grid gap-4 w-[229px] shrink-0">
           <Type checkedType={checkedType} onChange={handleTypeChange} />
           <Style checkedStyle={checkedStyle} onChange={handleStyleChange} />
-          <Purpose />
+          <Purpose
+            checkedPurpose={checkedPurpose}
+            onChange={handlePurposeChange}
+          />
           <Period />
         </div>
 
@@ -87,22 +104,40 @@ const Services = () => {
 
             {/* 🩷 ฟิลเตอร์แสดงเฉพาะที่เลือกไว้ */}
             {(!isAnyChecked || checkedType.treeD) && (
-              <TreeD checkedStyle={checkedStyle} />
+              <TreeD
+                checkedStyle={checkedStyle}
+                checkedPurpose={checkedPurpose}
+              />
             )}
             {(!isAnyChecked || checkedType.logo) && (
-              <Logo checkedStyle={checkedStyle} />
+              <Logo
+                checkedStyle={checkedStyle}
+                checkedPurpose={checkedPurpose}
+              />
             )}
             {(!isAnyChecked || checkedType.illustration) && (
-              <Illustration checkedStyle={checkedStyle} />
+              <Illustration
+                checkedStyle={checkedStyle}
+                checkedPurpose={checkedPurpose}
+              />
             )}
             {(!isAnyChecked || checkedType.poster) && (
-              <Poster checkedStyle={checkedStyle} />
+              <Poster
+                checkedStyle={checkedStyle}
+                checkedPurpose={checkedPurpose}
+              />
             )}
             {(!isAnyChecked || checkedType.character) && (
-              <Character checkedStyle={checkedStyle} />
+              <Character
+                checkedStyle={checkedStyle}
+                checkedPurpose={checkedPurpose}
+              />
             )}
             {(!isAnyChecked || checkedType.shirt) && (
-              <ShirtPattern checkedStyle={checkedStyle} />
+              <ShirtPattern
+                checkedStyle={checkedStyle}
+                checkedPurpose={checkedPurpose}
+              />
             )}
 
             <h1 className="text-[32px] text-[#493678] font-semibold mb-2 mt-4">
@@ -111,7 +146,10 @@ const Services = () => {
             <hr className="text-[#303030] max-w-[1260px]" />
             {(!isAnyChecked || checkedType.motion) && <Motion />}
             {(!isAnyChecked || checkedType.photo) && (
-              <Photo checkedStyle={checkedStyle} />
+              <Photo
+                checkedStyle={checkedStyle}
+                checkedPurpose={checkedPurpose}
+              />
             )}
           </div>
 

@@ -17,30 +17,104 @@ import Food7 from "../../assets/Services/Photo/Food7.jpg";
 import Food8 from "../../assets/Services/Photo/Food8.jpg";
 import Food9 from "../../assets/Services/Photo/Food9.jpg";
 import Food10 from "../../assets/Services/Photo/Food10.jpg";
+import { CheckSquare } from "lucide-react";
 
-const Photo = ({ checkedStyle }) => {
+const Photo = ({ checkedStyle, checkedPurpose }) => {
   const slides = [
-    { type: "image", src: Israel, alt: "Israel", style: "minimal" },
-    { type: "image", src: Food1, alt: "Food1", style: "minimal" },
-    { type: "image", src: Food2, alt: "Food2", style: "minimal" },
-    { type: "image", src: Food3, alt: "Food3", style: "minimal" },
-    { type: "image", src: Food4, alt: "Food4", style: "minimal" },
-    { type: "image", src: Food5, alt: "Food5", style: "minimal" },
-    { type: "image", src: Food6, alt: "Food6", style: "minimal" },
-    { type: "image", src: Food7, alt: "Food7", style: "minimal" },
-    { type: "image", src: Food8, alt: "Food8", style: "minimal" },
-    { type: "image", src: Food9, alt: "Food9", style: "minimal" },
-    { type: "image", src: Food10, alt: "Food10", style: "minimal" },
+    {
+      type: "image",
+      src: Israel,
+      alt: "Israel",
+      style: "minimal",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Food1,
+      alt: "Food1",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food2,
+      alt: "Food2",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food3,
+      alt: "Food3",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food4,
+      alt: "Food4",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food5,
+      alt: "Food5",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food6,
+      alt: "Food6",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food7,
+      alt: "Food7",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food8,
+      alt: "Food8",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food9,
+      alt: "Food9",
+      style: "minimal",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Food10,
+      alt: "Food10",
+      style: "minimal",
+      purpose: "promotion",
+    },
   ];
 
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
 
-  const filteredSlides =
-    stylesSelected.length === 0
-      ? slides
-      : slides.filter((item) => stylesSelected.includes(item.style));
+  const purposesSelected = Object.keys(checkedPurpose).filter(
+    (key) => checkedPurpose[key]
+  );
+
+  const filteredSlides = slides.filter((item) => {
+    const styleMatch =
+      stylesSelected.length === 0 || stylesSelected.includes(item.style);
+    const purposeMatch =
+      purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
+    return styleMatch && purposeMatch;
+  });
 
   return (
     <div>

@@ -13,24 +13,67 @@ import Kung from "../../assets/Services/Poster/Kung.png";
 import Cheer from "../../assets/Services/Poster/Cheer.png";
 import Audition from "../../assets/Services/Poster/Audition.png";
 
-const Poster = ({ checkedStyle }) => {
+const Poster = ({ checkedStyle, checkedPurpose }) => {
   const slides = [
-    { type: "image", src: Kmutt, alt: "Kmutt", style: "cartoon" },
-    { type: "image", src: TwentyFour, alt: "TwentyFour", style: "cartoon" },
-    { type: "image", src: ThisSong, alt: "ThisSong", style: "cartoon" },
-    { type: "image", src: Kung, alt: "Kung", style: "cartoon" },
-    { type: "image", src: Cheer, alt: "Cheer", style: "cartoon" },
-    { type: "image", src: Audition, alt: "Audition", style: "cartoon" },
+    {
+      type: "image",
+      src: Kmutt,
+      alt: "Kmutt",
+      style: "cartoon",
+      purpose: "socialMedia",
+    },
+    {
+      type: "image",
+      src: TwentyFour,
+      alt: "TwentyFour",
+      style: "cartoon",
+      purpose: "socialMedia",
+    },
+    {
+      type: "image",
+      src: ThisSong,
+      alt: "ThisSong",
+      style: "cartoon",
+      purpose: "socialMedia",
+    },
+    {
+      type: "image",
+      src: Kung,
+      alt: "Kung",
+      style: "cartoon",
+      purpose: "socialMedia",
+    },
+    {
+      type: "image",
+      src: Cheer,
+      alt: "Cheer",
+      style: "cartoon",
+      purpose: "socialMedia",
+    },
+    {
+      type: "image",
+      src: Audition,
+      alt: "Audition",
+      style: "cartoon",
+      purpose: "socialMedia",
+    },
   ];
 
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
 
-  const filterdSlides =
-    stylesSelected.length === 0
-      ? slides
-      : slides.filter((item) => stylesSelected.includes(item.style));
+  const purposesSelected = Object.keys(checkedPurpose).filter(
+    (key) => checkedPurpose[key]
+  );
+
+  const filterdSlides = slides.filter((item) => {
+    const styleMatch =
+      stylesSelected.length === 0 || stylesSelected.includes(item.style);
+    const purposeMatch =
+      purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
+    return styleMatch && purposeMatch;
+  });
 
   return (
     <div>

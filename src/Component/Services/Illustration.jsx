@@ -26,39 +26,206 @@ import Museum1 from "../../assets/Services/Illustration/Museum1.png";
 import Museum2 from "../../assets/Services/Illustration/Museum2.png";
 import Museum3 from "../../assets/Services/Illustration/Museum3.png";
 import Museum4 from "../../assets/Services/Illustration/Museum4.png";
+import FlowerWhite from "../../assets/Services/Illustration/FlowerWhite.png";
+import FlowerRed from "../../assets/Services/Illustration/FlowerRed.png";
+import EakWhite from "../../assets/Services/Illustration/EakWhite.png";
+import EakGreen from "../../assets/Services/Illustration/EakGreen.png";
+import Thai from "../../assets/Services/Illustration/Thai.png";
 
-const Illustration = ({ checkedStyle }) => {
+const Illustration = ({ checkedStyle, checkedPurpose }) => {
   const slides = [
-    { type: "image", src: Sleep, alt: "Sleep", style: "cartoon" },
-    { type: "image", src: Kuma, alt: "Kuma", style: "cartoon" },
-    { type: "image", src: Sushi, alt: "Sushi", style: "cartoon" },
-    { type: "image", src: Tok, alt: "Tok", style: "cartoon" },
-    { type: "image", src: Kimbab, alt: "Kimbab", style: "cartoon" },
-    { type: "image", src: Corn, alt: "Corn", style: "cartoon" },
-    { type: "image", src: Breakfast, alt: "Breakfast", style: "cartoon" },
-    { type: "image", src: Curry, alt: "Curry", style: "cartoon" },
-    { type: "image", src: Ramen, alt: "Ramen", style: "cartoon" },
-    { type: "image", src: Ramen2, alt: "Ramen2", style: "cartoon" },
-    { type: "image", src: Tomyum, alt: "Tomyum", style: "cartoon" },
-    { type: "image", src: Padthai, alt: "Padthai", style: "cartoon" },
-    { type: "image", src: Mooping, alt: "Mooping", style: "cartoon" },
-    { type: "image", src: Game1, alt: "Game1", style: "cartoon" },
-    { type: "image", src: Game2, alt: "Game2", style: "cartoon" },
-    { type: "image", src: Game3, alt: "Game3", style: "cartoon" },
-    { type: "image", src: Museum1, alt: "Museum1", style: "cartoon" },
-    { type: "image", src: Museum2, alt: "Museum2", style: "cartoon" },
-    { type: "image", src: Museum3, alt: "Museum3", style: "cartoon" },
-    { type: "image", src: Museum4, alt: "Museum4", style: "cartoon" },
+    {
+      type: "image",
+      src: Sleep,
+      alt: "Sleep",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Kuma,
+      alt: "Kuma",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Sushi,
+      alt: "Sushi",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Tok,
+      alt: "Tok",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Kimbab,
+      alt: "Kimbab",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Corn,
+      alt: "Corn",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Breakfast,
+      alt: "Breakfast",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Curry,
+      alt: "Curry",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Ramen,
+      alt: "Ramen",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Ramen2,
+      alt: "Ramen2",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Tomyum,
+      alt: "Tomyum",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Padthai,
+      alt: "Padthai",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Mooping,
+      alt: "Mooping",
+      style: "cartoon",
+      purpose: "promotion",
+    },
+    {
+      type: "image",
+      src: Game1,
+      alt: "Game1",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: Game2,
+      alt: "Game2",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: Game3,
+      alt: "Game3",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: Museum1,
+      alt: "Museum1",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Museum2,
+      alt: "Museum2",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Museum3,
+      alt: "Museum3",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Museum4,
+      alt: "Museum4",
+      style: "cartoon",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: FlowerWhite,
+      alt: "FlowerWhite",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: FlowerRed,
+      alt: "FlowerRed",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: EakWhite,
+      alt: "EakWhite",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: EakGreen,
+      alt: "EakGreen",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: Thai,
+      alt: "Thai",
+      style: "pixelArt",
+      purpose: "game",
+    },
   ];
 
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
 
-  const filteredSlides =
-    stylesSelected.length === 0
-      ? slides
-      : slides.filter((item) => stylesSelected.includes(item.style));
+  const purposesSelected = Object.keys(checkedPurpose).filter(
+    (key) => checkedPurpose[key]
+  );
+
+  const filteredSlides = slides.filter((item) => {
+    const styleMatch =
+      stylesSelected.length === 0 || stylesSelected.includes(item.style);
+    const purposeMatch =
+      purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
+    return styleMatch && purposeMatch;
+  });
 
   return (
     <div>

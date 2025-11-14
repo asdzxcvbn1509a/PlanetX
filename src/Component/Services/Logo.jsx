@@ -18,29 +18,84 @@ import Way from "../../assets/Services/Logo/Way.png";
 import Diamond from "../../assets/Services/Logo/Diamond.png";
 import Modern from "../../assets/Services/Logo/Modern.png";
 
-const Logo = ({ checkedStyle }) => {
+const Logo = ({ checkedStyle, checkedPurpose }) => {
   const slides = [
-    { type: "image", src: Sixty, alt: "Sixty", style: "minimal" },
-    { type: "image", src: Sweet, alt: "Sweet", style: "minimal" },
-    { type: "image", src: Kmutt, alt: "Kmutt", style: "minimal" },
-    { type: "image", src: Night, alt: "Night", style: "minimal" },
-    { type: "image", src: Cheer, alt: "Cheer", style: "minimal" },
-    { type: "image", src: BBQ, alt: "BBQ", style: "minimal" },
-    { type: "image", src: Shell, alt: "Shell", style: "minimal" },
-    { type: "image", src: Sex, alt: "Sea", style: "minimal" },
-    { type: "image", src: Way, alt: "Way", style: "minimal" },
-    { type: "image", src: Diamond, alt: "Diamond", style: "minimal" },
-    { type: "image", src: Modern, alt: "Modern", style: "minimal" },
+    {
+      type: "image",
+      src: Sixty,
+      alt: "Sixty",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: Sweet,
+      alt: "Sweet",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: Kmutt,
+      alt: "Kmutt",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: Night,
+      alt: "Night",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: Cheer,
+      alt: "Cheer",
+      style: "minimal",
+      purpose: "brand",
+    },
+    { type: "image", src: BBQ, alt: "BBQ", style: "minimal", purpose: "brand" },
+    {
+      type: "image",
+      src: Shell,
+      alt: "Shell",
+      style: "minimal",
+      purpose: "brand",
+    },
+    { type: "image", src: Sex, alt: "Sea", style: "minimal", purpose: "brand" },
+    { type: "image", src: Way, alt: "Way", style: "minimal", purpose: "brand" },
+    {
+      type: "image",
+      src: Diamond,
+      alt: "Diamond",
+      style: "minimal",
+      purpose: "brand",
+    },
+    {
+      type: "image",
+      src: Modern,
+      alt: "Modern",
+      style: "minimal",
+      purpose: "brand",
+    },
   ];
 
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
 
-  const filteredSlides =
-    stylesSelected.length === 0
-      ? slides
-      : slides.filter((item) => stylesSelected.includes(item.style));
+  const purposesSelected = Object.keys(checkedPurpose).filter(
+    (key) => checkedPurpose[key]
+  );
+
+  const filteredSlides = slides.filter((item) => {
+    const styleMatch =
+      stylesSelected.length === 0 || stylesSelected.includes(item.style);
+    const purposeMatch =
+      purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
+    return styleMatch && purposeMatch;
+  });
 
   return (
     <div>

@@ -23,36 +23,209 @@ import MFS1 from "../../assets/Services/Character/MFS1.png";
 import MFS2 from "../../assets/Services/Character/MFS2.png";
 import MFS3 from "../../assets/Services/Character/MFS3.png";
 import Candle from "../../assets/Services/Character/Candle.png";
+import EakGreen from "../../assets/Services/Character/EakGreen.png";
+import EakWhite from "../../assets/Services/Character/EakWhite.png";
+import EakBlue from "../../assets/Services/Character/EakBlue.png";
+import EakRed from "../../assets/Services/Character/EakRed.png";
+import EakPink from "../../assets/Services/Character/EakPink.png";
+import EakGreenSoft from "../../assets/Services/Character/EakGreenSoft.png";
+import StudentBoy from "../../assets/Services/Character/StudentBoy.png";
+import StudentGirl from "../../assets/Services/Character/StudentGirl.png";
 
-const Character = ({ checkedStyle }) => {
+const Character = ({ checkedStyle, checkedPurpose }) => {
   const slides = [
-    { type: "image", src: Girl, alt: "Girl", style: "cartoon" },
-    { type: "image", src: Boy, alt: "Boy", style: "cartoon" },
-    { type: "image", src: Woman, alt: "Woman", style: "cartoon" },
-    { type: "image", src: CatDoctor, alt: "CatDoctor", style: "cartoon" },
-    { type: "image", src: CatMagic, alt: "Catmagic", style: "cartoon" },
-    { type: "image", src: CatGhost, alt: "CatGhost", style: "cartoon" },
-    { type: "image", src: CatNigga, alt: "CatNigga", style: "cartoon" },
-    { type: "image", src: CatWhite, alt: "CatWhite", style: "cartoon" },
-    { type: "image", src: CatBlue, alt: "CatBlue", style: "cartoon" },
-    { type: "image", src: CatWhiteHero, alt: "CatWhiteHero", style: "cartoon" },
-    { type: "image", src: CatNiggaHero, alt: "CatNiggaHero", style: "cartoon" },
-    { type: "image", src: Shark, alt: "Shark", style: "cartoon" },
-    { type: "image", src: CatSkeleton, alt: "CatSkeleton", style: "cartoon" },
-    { type: "image", src: MFS1, alt: "MFS1", style: "cartoon" },
-    { type: "image", src: MFS2, alt: "MFS2", style: "cartoon" },
-    { type: "image", src: MFS3, alt: "MFS3", style: "cartoon" },
-    { type: "image", src: Candle, alt: "Candle", style: "cartoon" },
+    {
+      type: "image",
+      src: Girl,
+      alt: "Girl",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Boy,
+      alt: "Boy",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Woman,
+      alt: "Woman",
+      style: "cartoon",
+      purpose: "education",
+    },
+    {
+      type: "image",
+      src: CatDoctor,
+      alt: "CatDoctor",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: CatMagic,
+      alt: "Catmagic",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: CatGhost,
+      alt: "CatGhost",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: CatNigga,
+      alt: "CatNigga",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: CatWhite,
+      alt: "CatWhite",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: CatBlue,
+      alt: "CatBlue",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: CatWhiteHero,
+      alt: "CatWhiteHero",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: CatNiggaHero,
+      alt: "CatNiggaHero",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: Shark,
+      alt: "Shark",
+      style: "cartoon",
+      purpose: "education",
+    },
+    {
+      type: "image",
+      src: CatSkeleton,
+      alt: "CatSkeleton",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: MFS1,
+      alt: "MFS1",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: MFS2,
+      alt: "MFS2",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: MFS3,
+      alt: "MFS3",
+      style: "cartoon",
+      purpose: "personalArt",
+    },
+    {
+      type: "image",
+      src: Candle,
+      alt: "Candle",
+      style: "cartoon",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: EakGreen,
+      alt: "EakGreen",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: EakWhite,
+      alt: "EakWhite",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: EakBlue,
+      alt: "EakBlue",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: EakRed,
+      alt: "EakRed",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: EakPink,
+      alt: "EakPink",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: EakGreenSoft,
+      alt: "EakGreenSoft",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: StudentBoy,
+      alt: "StudentBoy",
+      style: "pixelArt",
+      purpose: "game",
+    },
+    {
+      type: "image",
+      src: StudentGirl,
+      alt: "StudentGirl",
+      style: "pixelArt",
+      purpose: "game",
+    },
   ];
 
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
 
-  const filteredSlides =
-    stylesSelected.length === 0
-      ? slides
-      : slides.filter((item) => stylesSelected.includes(item.style));
+  const purposesSelected = Object.keys(checkedPurpose).filter(
+    (key) => checkedPurpose[key]
+  );
+
+  const filteredSlides = slides.filter((item) => {
+    const styleMatch =
+      stylesSelected.length === 0 || stylesSelected.includes(item.style);
+    const purposeMatch =
+      purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
+    return styleMatch && purposeMatch;
+  });
 
   return (
     <div>
