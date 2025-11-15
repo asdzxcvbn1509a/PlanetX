@@ -17,8 +17,9 @@ import Sex from "../../assets/Services/Logo/Sex.png";
 import Way from "../../assets/Services/Logo/Way.png";
 import Diamond from "../../assets/Services/Logo/Diamond.png";
 import Modern from "../../assets/Services/Logo/Modern.png";
+import { NavLink } from "react-router-dom";
 
-const Logo = ({ checkedStyle, checkedPurpose }) => {
+const Logo = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
   const slides = [
     {
       type: "image",
@@ -26,6 +27,7 @@ const Logo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Sixty",
       style: "minimal",
       purpose: "brand",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -33,6 +35,7 @@ const Logo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Sweet",
       style: "minimal",
       purpose: "brand",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -40,6 +43,7 @@ const Logo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Kmutt",
       style: "minimal",
       purpose: "brand",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -47,6 +51,7 @@ const Logo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Night",
       style: "minimal",
       purpose: "brand",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -54,23 +59,47 @@ const Logo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Cheer",
       style: "minimal",
       purpose: "brand",
+      period: "twoWeek",
     },
-    { type: "image", src: BBQ, alt: "BBQ", style: "minimal", purpose: "brand" },
+    {
+      type: "image",
+      src: BBQ,
+      alt: "BBQ",
+      style: "minimal",
+      purpose: "brand",
+      period: "oneWeek",
+    },
     {
       type: "image",
       src: Shell,
       alt: "Shell",
       style: "minimal",
       purpose: "brand",
+      period: "oneWeek",
     },
-    { type: "image", src: Sex, alt: "Sea", style: "minimal", purpose: "brand" },
-    { type: "image", src: Way, alt: "Way", style: "minimal", purpose: "brand" },
+    {
+      type: "image",
+      src: Sex,
+      alt: "Sea",
+      style: "minimal",
+      purpose: "brand",
+      period: "oneWeek",
+    },
+    {
+      type: "image",
+      src: Way,
+      alt: "Way",
+      style: "minimal",
+      purpose: "brand",
+      period: "oneWeek",
+    },
     {
       type: "image",
       src: Diamond,
       alt: "Diamond",
       style: "minimal",
       purpose: "brand",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -78,6 +107,7 @@ const Logo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Modern",
       style: "minimal",
       purpose: "brand",
+      period: "threeDay",
     },
   ];
 
@@ -89,17 +119,25 @@ const Logo = ({ checkedStyle, checkedPurpose }) => {
     (key) => checkedPurpose[key]
   );
 
+  const periodSelected = Object.keys(checkedPeriod).filter(
+    (key) => checkedPeriod[key]
+  );
+
   const filteredSlides = slides.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMatch =
       purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
-    return styleMatch && purposeMatch;
+    const periodMatch =
+      periodSelected.length === 0 || periodSelected.includes(item.period);
+    return styleMatch && purposeMatch && periodMatch;
   });
 
   return (
     <div>
-      <h1 className="text-xl mt-[13px] mb-6">โลโก้</h1>
+      <h1 className="text-xl mt-[13px] mb-6">
+        {filteredSlides.length === 0 ? "" : "โลโก้"}
+      </h1>
       <Swiper
         slidesPerView={3}
         spaceBetween={26}
@@ -124,16 +162,22 @@ const Logo = ({ checkedStyle, checkedPurpose }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-end mt-[27px]">
-        <a
-          style={{
-            background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
-          }}
-          className="text-base text-white mr-[88px] border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
-        >
-          ดูเพิ่มเติม
-        </a>
-      </div>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <div className="flex justify-end mt-[27px]">
+          <NavLink
+            to="/services/logo"
+            style={{
+              background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
+            }}
+            className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+          >
+            ดูเพิ่มเติม
+          </NavLink>
+        </div>
+      )}
+
       <style>{`
         .swiper-button-next,
         .swiper-button-prev {

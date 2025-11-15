@@ -11,8 +11,9 @@ import Thep from "../../assets/Services/ShirtPattern/Thep.png";
 import EightTeen from "../../assets/Services/ShirtPattern/EightTeen.png";
 import EightTeen2 from "../../assets/Services/ShirtPattern/EightTeen2.png";
 import Thep2 from "../../assets/Services/ShirtPattern/Thep2.png";
+import { NavLink } from "react-router-dom";
 
-const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
+const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
   const slides = [
     {
       type: "image",
@@ -20,6 +21,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
       alt: "SixtySix",
       style: "minimal",
       purpose: "brand",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -27,6 +29,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
       alt: "Thep",
       style: "minimal",
       purpose: "brand",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -34,6 +37,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
       altL: "EightTeen",
       style: "minimal",
       purpose: "brand",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -41,6 +45,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
       alt: "EightTeen2",
       style: "minimal",
       purpose: "brand",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -48,6 +53,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
       alt: "Thep2",
       style: "minimal",
       purpose: "brand",
+      period: "oneWeek",
     },
   ];
 
@@ -59,17 +65,28 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
     (key) => checkedPurpose[key]
   );
 
+  const periodSelected = Object.keys(checkedPeriod).filter(
+    (key) => checkedPeriod[key]
+  );
+
   const filteredSlides = slides.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMach =
       purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
-    return styleMatch && purposeMach;
+    const periodMatch =
+      periodSelected.length === 0 || periodSelected.includes(item.period);
+    return styleMatch && purposeMach && periodMatch;
   });
 
   return (
     <div>
-      <h1 className="text-xl mt-[13px] mb-6">ออกแบบลายเสื้อ</h1>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <h1 className="text-xl mt-[13px] mb-6">ออกแบบลายเสื้อ</h1>
+      )}
+
       <Swiper
         slidesPerView={3}
         spaceBetween={26}
@@ -94,16 +111,22 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-end mt-[27px]">
-        <a
-          style={{
-            background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
-          }}
-          className="text-base text-white mr-[88px] border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
-        >
-          ดูเพิ่มเติม
-        </a>
-      </div>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <div className="flex justify-end mt-[27px]">
+          <NavLink
+            to="/services/shirt"
+            style={{
+              background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
+            }}
+            className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+          >
+            ดูเพิ่มเติม
+          </NavLink>
+        </div>
+      )}
+
       <style>{`
         .swiper-button-next,
         .swiper-button-prev {

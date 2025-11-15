@@ -31,8 +31,9 @@ import FlowerRed from "../../assets/Services/Illustration/FlowerRed.png";
 import EakWhite from "../../assets/Services/Illustration/EakWhite.png";
 import EakGreen from "../../assets/Services/Illustration/EakGreen.png";
 import Thai from "../../assets/Services/Illustration/Thai.png";
+import { NavLink } from "react-router-dom";
 
-const Illustration = ({ checkedStyle, checkedPurpose }) => {
+const Illustration = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
   const slides = [
     {
       type: "image",
@@ -40,6 +41,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Sleep",
       style: "cartoon",
       purpose: "personalArt",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -47,6 +49,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Kuma",
       style: "cartoon",
       purpose: "personalArt",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -54,6 +57,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Sushi",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -61,6 +65,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Tok",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -68,6 +73,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Kimbab",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -75,6 +81,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Corn",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -82,6 +89,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Breakfast",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -89,6 +97,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Curry",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -96,6 +105,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Ramen",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -103,6 +113,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Ramen2",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -110,6 +121,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Tomyum",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -117,6 +129,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Padthai",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -124,6 +137,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Mooping",
       style: "cartoon",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -131,6 +145,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Game1",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -138,6 +153,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Game2",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -145,6 +161,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Game3",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -152,6 +169,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Museum1",
       style: "cartoon",
       purpose: "personalArt",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -159,6 +177,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Museum2",
       style: "cartoon",
       purpose: "personalArt",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -166,6 +185,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Museum3",
       style: "cartoon",
       purpose: "personalArt",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -173,6 +193,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Museum4",
       style: "cartoon",
       purpose: "brand",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -180,6 +201,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "FlowerWhite",
       style: "pixelArt",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -187,6 +209,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "FlowerRed",
       style: "pixelArt",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -194,6 +217,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "EakWhite",
       style: "pixelArt",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -201,6 +225,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "EakGreen",
       style: "pixelArt",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -208,6 +233,7 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
       alt: "Thai",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
   ];
 
@@ -219,17 +245,28 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
     (key) => checkedPurpose[key]
   );
 
+  const periodSelected = Object.keys(checkedPeriod).filter(
+    (key) => checkedPeriod[key]
+  );
+
   const filteredSlides = slides.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMatch =
       purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
-    return styleMatch && purposeMatch;
+    const periodMatch =
+      periodSelected.length === 0 || periodSelected.includes(item.period);
+    return styleMatch && purposeMatch && periodMatch;
   });
 
   return (
     <div>
-      <h1 className="text-xl mt-[13px] mb-6">ภาพประกอบ</h1>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <h1 className="text-xl mt-[13px] mb-6">ภาพประกอบ</h1>
+      )}
+
       <Swiper
         slidesPerView={3}
         spaceBetween={26}
@@ -254,16 +291,22 @@ const Illustration = ({ checkedStyle, checkedPurpose }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-end mt-[27px]">
-        <a
-          style={{
-            background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
-          }}
-          className="text-base text-white mr-[88px] border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
-        >
-          ดูเพิ่มเติม
-        </a>
-      </div>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <div className="flex justify-end mt-[27px]">
+          <NavLink
+            to="/services/illustration"
+            style={{
+              background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
+            }}
+            className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+          >
+            ดูเพิ่มเติม
+          </NavLink>
+        </div>
+      )}
+
       <style>{`
         .swiper-button-next,
         .swiper-button-prev {

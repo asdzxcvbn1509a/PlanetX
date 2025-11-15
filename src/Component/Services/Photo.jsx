@@ -18,8 +18,9 @@ import Food8 from "../../assets/Services/Photo/Food8.jpg";
 import Food9 from "../../assets/Services/Photo/Food9.jpg";
 import Food10 from "../../assets/Services/Photo/Food10.jpg";
 import { CheckSquare } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
-const Photo = ({ checkedStyle, checkedPurpose }) => {
+const Photo = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
   const slides = [
     {
       type: "image",
@@ -27,6 +28,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Israel",
       style: "minimal",
       purpose: "personalArt",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -34,6 +36,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food1",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -41,6 +44,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food2",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -48,6 +52,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food3",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -55,6 +60,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food4",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -62,6 +68,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food5",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -69,6 +76,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food6",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -76,6 +84,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food7",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -83,6 +92,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food8",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -90,6 +100,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food9",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
     {
       type: "image",
@@ -97,6 +108,7 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
       alt: "Food10",
       style: "minimal",
       purpose: "promotion",
+      period: "threeDay",
     },
   ];
 
@@ -108,17 +120,28 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
     (key) => checkedPurpose[key]
   );
 
+  const periodSelected = Object.keys(checkedPeriod).filter(
+    (key) => checkedPeriod[key]
+  );
+
   const filteredSlides = slides.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMatch =
       purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
-    return styleMatch && purposeMatch;
+    const periodMatch =
+      periodSelected.length === 0 || periodSelected.includes(item.period);
+    return styleMatch && purposeMatch && periodMatch;
   });
 
   return (
     <div>
-      <h1 className="text-xl mt-[13px] mb-6">ถ่ายภาพ / วีดีโอ</h1>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <h1 className="text-xl mt-[13px] mb-6">ถ่ายภาพ / วีดีโอ</h1>
+      )}
+
       <Swiper
         slidesPerView={3}
         spaceBetween={26}
@@ -148,16 +171,22 @@ const Photo = ({ checkedStyle, checkedPurpose }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-end mt-[27px] mb-[96px]">
-        <a
-          style={{
-            background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
-          }}
-          className="text-base text-white mr-[88px] border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
-        >
-          ดูเพิ่มเติม
-        </a>
-      </div>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <div className="flex justify-end mt-[27px]">
+          <NavLink
+            to="/services/photo"
+            style={{
+              background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
+            }}
+            className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+          >
+            ดูเพิ่มเติม
+          </NavLink>
+        </div>
+      )}
+
       <style>{`
         .swiper-button-next,
         .swiper-button-prev {

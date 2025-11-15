@@ -31,8 +31,9 @@ import EakPink from "../../assets/Services/Character/EakPink.png";
 import EakGreenSoft from "../../assets/Services/Character/EakGreenSoft.png";
 import StudentBoy from "../../assets/Services/Character/StudentBoy.png";
 import StudentGirl from "../../assets/Services/Character/StudentGirl.png";
+import { NavLink } from "react-router-dom";
 
-const Character = ({ checkedStyle, checkedPurpose }) => {
+const Character = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
   const slides = [
     {
       type: "image",
@@ -40,6 +41,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "Girl",
       style: "cartoon",
       purpose: "personalArt",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -47,6 +49,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "Boy",
       style: "cartoon",
       purpose: "personalArt",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -54,6 +57,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "Woman",
       style: "cartoon",
       purpose: "education",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -61,6 +65,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "CatDoctor",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -68,6 +73,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "Catmagic",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -75,6 +81,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "CatGhost",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -82,6 +89,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "CatNigga",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -89,6 +97,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "CatWhite",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -96,6 +105,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "CatBlue",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -103,6 +113,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "CatWhiteHero",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -110,6 +121,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "CatNiggaHero",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -117,6 +129,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "Shark",
       style: "cartoon",
       purpose: "education",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -124,13 +137,15 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "CatSkeleton",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
       src: MFS1,
       alt: "MFS1",
       style: "cartoon",
-      purpose: "personalArt",
+      purpose: "education",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -138,6 +153,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "MFS2",
       style: "cartoon",
       purpose: "personalArt",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -145,6 +161,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "MFS3",
       style: "cartoon",
       purpose: "personalArt",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -152,6 +169,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "Candle",
       style: "cartoon",
       purpose: "game",
+      period: "oneWeek",
     },
     {
       type: "image",
@@ -159,6 +177,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "EakGreen",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -166,6 +185,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "EakWhite",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -173,6 +193,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "EakBlue",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -180,6 +201,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "EakRed",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -187,6 +209,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "EakPink",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -194,6 +217,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "EakGreenSoft",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -201,6 +225,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "StudentBoy",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
     {
       type: "image",
@@ -208,6 +233,7 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
       alt: "StudentGirl",
       style: "pixelArt",
       purpose: "game",
+      period: "twoWeek",
     },
   ];
 
@@ -219,17 +245,28 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
     (key) => checkedPurpose[key]
   );
 
+  const periodSelected = Object.keys(checkedPeriod).filter(
+    (key) => checkedPeriod[key]
+  );
+
   const filteredSlides = slides.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMatch =
       purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
-    return styleMatch && purposeMatch;
+    const periodMatch =
+      periodSelected.length === 0 || periodSelected.includes(item.period);
+    return styleMatch && purposeMatch && periodMatch;
   });
 
   return (
     <div>
-      <h1 className="text-xl mt-[13px] mb-6">ออกแบบตัวละคร</h1>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <h1 className="text-xl mt-[13px] mb-6">ออกแบบตัวละคร</h1>
+      )}
+
       <Swiper
         slidesPerView={3}
         spaceBetween={26}
@@ -254,16 +291,22 @@ const Character = ({ checkedStyle, checkedPurpose }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-end mt-[27px]">
-        <a
-          style={{
-            background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
-          }}
-          className="text-base text-white mr-[88px] border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
-        >
-          ดูเพิ่มเติม
-        </a>
-      </div>
+      {filteredSlides.length === 0 ? (
+        ""
+      ) : (
+        <div className="flex justify-end mt-[27px]">
+          <NavLink
+            to="/services/character"
+            style={{
+              background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
+            }}
+            className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+          >
+            ดูเพิ่มเติม
+          </NavLink>
+        </div>
+      )}
+
       <style>{`
         .swiper-button-next,
         .swiper-button-prev {

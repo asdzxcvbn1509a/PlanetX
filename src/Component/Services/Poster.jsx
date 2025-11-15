@@ -12,8 +12,9 @@ import ThisSong from "../../assets/Services/Poster/ThisSong.png";
 import Kung from "../../assets/Services/Poster/Kung.png";
 import Cheer from "../../assets/Services/Poster/Cheer.png";
 import Audition from "../../assets/Services/Poster/Audition.png";
+import { NavLink } from "react-router-dom";
 
-const Poster = ({ checkedStyle, checkedPurpose }) => {
+const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
   const slides = [
     {
       type: "image",
@@ -21,6 +22,7 @@ const Poster = ({ checkedStyle, checkedPurpose }) => {
       alt: "Kmutt",
       style: "cartoon",
       purpose: "socialMedia",
+      period: "moreThanTwoWeek",
     },
     {
       type: "image",
@@ -28,6 +30,7 @@ const Poster = ({ checkedStyle, checkedPurpose }) => {
       alt: "TwentyFour",
       style: "cartoon",
       purpose: "socialMedia",
+      period: "moreThanTwoWeek",
     },
     {
       type: "image",
@@ -35,6 +38,7 @@ const Poster = ({ checkedStyle, checkedPurpose }) => {
       alt: "ThisSong",
       style: "cartoon",
       purpose: "socialMedia",
+      period: "moreThanTwoWeek",
     },
     {
       type: "image",
@@ -42,6 +46,7 @@ const Poster = ({ checkedStyle, checkedPurpose }) => {
       alt: "Kung",
       style: "cartoon",
       purpose: "socialMedia",
+      period: "moreThanTwoWeek",
     },
     {
       type: "image",
@@ -49,6 +54,7 @@ const Poster = ({ checkedStyle, checkedPurpose }) => {
       alt: "Cheer",
       style: "cartoon",
       purpose: "socialMedia",
+      period: "moreThanTwoWeek",
     },
     {
       type: "image",
@@ -56,6 +62,7 @@ const Poster = ({ checkedStyle, checkedPurpose }) => {
       alt: "Audition",
       style: "cartoon",
       purpose: "socialMedia",
+      period: "moreThanTwoWeek",
     },
   ];
 
@@ -67,17 +74,28 @@ const Poster = ({ checkedStyle, checkedPurpose }) => {
     (key) => checkedPurpose[key]
   );
 
+  const periodSelected = Object.keys(checkedPeriod).filter(
+    (key) => checkedPeriod[key]
+  );
+
   const filterdSlides = slides.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMatch =
       purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
-    return styleMatch && purposeMatch;
+    const periodMatch =
+      periodSelected.length === 0 || periodSelected.includes(item.period);
+    return styleMatch && purposeMatch && periodMatch;
   });
 
   return (
     <div>
-      <h1 className="text-xl mt-[13px] mb-6">โปสเตอร์ / ป้ายโฆษณา</h1>
+      {filterdSlides.length === 0 ? (
+        ""
+      ) : (
+        <h1 className="text-xl mt-[13px] mb-6">โปสเตอร์ / ป้ายโฆษณา</h1>
+      )}
+
       <Swiper
         slidesPerView={3}
         spaceBetween={26}
@@ -102,16 +120,22 @@ const Poster = ({ checkedStyle, checkedPurpose }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-end mt-[27px]">
-        <a
-          style={{
-            background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
-          }}
-          className="text-base text-white mr-[88px] border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
-        >
-          ดูเพิ่มเติม
-        </a>
-      </div>
+      {filterdSlides.length === 0 ? (
+        ""
+      ) : (
+        <div className="flex justify-end mt-[27px]">
+          <NavLink
+            to="/services/poster"
+            style={{
+              background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
+            }}
+            className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+          >
+            ดูเพิ่มเติม
+          </NavLink>
+        </div>
+      )}
+
       <style>{`
         .swiper-button-next,
         .swiper-button-prev {

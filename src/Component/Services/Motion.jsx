@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
 import Israel from "../../assets/Services/Photo/Israel.jpeg";
+import { NavLink } from "react-router-dom";
 
 const ShirtPattern = () => {
   const slides = [{ type: "image", src: Israel, alt: "Israel" }];
@@ -43,14 +44,15 @@ const ShirtPattern = () => {
         ))}
       </Swiper>
       <div className="flex justify-end mt-[27px]">
-        <a
+        <NavLink
+          to="/services/motion"
           style={{
             background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
           }}
-          className="text-base text-white mr-[88px] border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+          className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
         >
           ดูเพิ่มเติม
-        </a>
+        </NavLink>
       </div>
       <style>{`
         .swiper-button-next,

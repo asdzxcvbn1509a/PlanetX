@@ -4,6 +4,12 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 const Style = ({ checkedStyle, onChange }) => {
   const [isOpen, setIsOpen] = useState(true);
 
+  const style = [
+    ["minimal", "มินิมอล"],
+    ["cartoon", "การ์ตูน"],
+    ["pixelArt", "พิกเซลอาร์ต"],
+  ];
+
   return (
     <div>
       <button
@@ -29,33 +35,20 @@ const Style = ({ checkedStyle, onChange }) => {
             className="w-[229px] rounded-b-xl"
           >
             <div className="grid gap-[10px] pt-[12px] pl-[12px] pb-[12px]">
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                  checked={checkedStyle.minimal || false}
-                  onChange={() => onChange("minimal")}
-                />
-                มินิมอล
-              </label>
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                  checked={checkedStyle.cartoon || false}
-                  onChange={() => onChange("cartoon")}
-                />
-                การ์ตูน
-              </label>
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                  checked={checkedStyle.pixelArt || false}
-                  onChange={() => onChange("pixelArt")}
-                />
-                พิกเซลอาร์ต
-              </label>
+              {style.map(([key, values]) => (
+                <label
+                  key={key}
+                  className="text-base font-light cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    className="mr-[12px] cursor-pointer"
+                    checked={checkedStyle[key] || false}
+                    onChange={() => onChange(key)}
+                  />
+                  {values}
+                </label>
+              ))}
             </div>
           </div>
         )}

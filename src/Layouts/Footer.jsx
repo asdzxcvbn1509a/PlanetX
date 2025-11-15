@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <div className="text-center bg-[#3B2862]">
+      <div className="text-center bg-[#3B2862] mt-[96px]">
         <div className="py-10">
           <h1 className="text-[40px] text-white">Planet x</h1>
           <p className="text-xl font-light text-white">

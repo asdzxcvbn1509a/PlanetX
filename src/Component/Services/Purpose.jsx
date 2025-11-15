@@ -4,6 +4,15 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 const Purpose = ({ checkedPurpose, onChange }) => {
   const [isOpen, setIsOpen] = useState(true);
 
+  const purpose = [
+    ["promotion", "โปรโมทสินค้า"],
+    ["education", "การศึกษา"],
+    ["socialMedia", "โซเชียลมีเดีย"],
+    ["game", "เกม"],
+    ["personalArt", "ศิลปะส่วนบุคคล"],
+    ["brand", "องค์กร / แบรนด์"],
+  ];
+
   return (
     <div>
       <button
@@ -29,60 +38,20 @@ const Purpose = ({ checkedPurpose, onChange }) => {
             className="w-[229px] rounded-b-lg"
           >
             <div className="grid gap-[10px] pt-[12px] pl-[12px] pb-[12px]">
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  checked={checkedPurpose.promotion}
-                  onChange={() => onChange("promotion")}
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                />
-                โปรโมทสินค้า
-              </label>
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  checked={checkedPurpose.education}
-                  onChange={() => onChange("education")}
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                />
-                การศึกษา
-              </label>
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                  checked={checkedPurpose.socialMedia}
-                  onChange={() => onChange("socialMedia")}
-                />
-                โซเชียลมีเดีย
-              </label>
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                  checked={checkedPurpose.game}
-                  onChange={() => onChange("game")}
-                />
-                เกม
-              </label>
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                  checked={checkedPurpose.personalArt}
-                  onChange={() => onChange("personalArt")}
-                />
-                ศิลปะส่วนบุคคล
-              </label>
-              <label className="text-base font-light cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="mr-[12px] cursor-pointer"
-                  checked={checkedPurpose.brand}
-                  onChange={() => onChange("brand")}
-                />
-                องค์กร / แบรนด์
-              </label>
+              {purpose.map(([key, value]) => (
+                <label
+                  key={key}
+                  className="text-base font-light cursor-pointer"
+                >
+                  <input
+                    checked={checkedPurpose[key]}
+                    onChange={() => onChange(key)}
+                    type="checkbox"
+                    className="mr-[12px] cursor-pointer"
+                  />
+                  {value}
+                </label>
+              ))}
             </div>
           </div>
         )}
