@@ -5,67 +5,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
-
-import Kmutt from "../../assets/Services/Poster/Kmutt.png";
-import TwentyFour from "../../assets/Services/Poster/TwentyFour.png";
-import ThisSong from "../../assets/Services/Poster/ThisSong.png";
-import Kung from "../../assets/Services/Poster/Kung.png";
-import Cheer from "../../assets/Services/Poster/Cheer.png";
-import Audition from "../../assets/Services/Poster/Audition.png";
 import { NavLink } from "react-router-dom";
+import PosterData from "../../data/PosterData";
 
 const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
-  const slides = [
-    {
-      type: "image",
-      src: Kmutt,
-      alt: "Kmutt",
-      style: "cartoon",
-      purpose: "socialMedia",
-      period: "moreThanTwoWeek",
-    },
-    {
-      type: "image",
-      src: TwentyFour,
-      alt: "TwentyFour",
-      style: "cartoon",
-      purpose: "socialMedia",
-      period: "moreThanTwoWeek",
-    },
-    {
-      type: "image",
-      src: ThisSong,
-      alt: "ThisSong",
-      style: "cartoon",
-      purpose: "socialMedia",
-      period: "moreThanTwoWeek",
-    },
-    {
-      type: "image",
-      src: Kung,
-      alt: "Kung",
-      style: "cartoon",
-      purpose: "socialMedia",
-      period: "moreThanTwoWeek",
-    },
-    {
-      type: "image",
-      src: Cheer,
-      alt: "Cheer",
-      style: "cartoon",
-      purpose: "socialMedia",
-      period: "moreThanTwoWeek",
-    },
-    {
-      type: "image",
-      src: Audition,
-      alt: "Audition",
-      style: "cartoon",
-      purpose: "socialMedia",
-      period: "moreThanTwoWeek",
-    },
-  ];
-
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
@@ -78,7 +21,7 @@ const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
     (key) => checkedPeriod[key]
   );
 
-  const filterdSlides = slides.filter((item) => {
+  const filterdSlides = PosterData.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMatch =

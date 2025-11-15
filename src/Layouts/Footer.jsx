@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -13,18 +13,18 @@ const Footer = () => {
         </div>
         <hr className="max-w-[1264px] mx-auto text-white" />
         <div className="flex justify-around max-w-[700px] mx-auto py-6">
-          <a href="/" className="text-xl font-light text-white">
+          <NavLink to="/" className="text-xl font-light text-white">
             หน้าหลัก
-          </a>
-          <a href="/services" className="text-xl font-light text-white">
+          </NavLink>
+          <NavLink to="/services" className="text-xl font-light text-white">
             บริการ
-          </a>
-          <a href="/about-us" className="text-xl font-light text-white">
+          </NavLink>
+          <NavLink to="/about-us" className="text-xl font-light text-white">
             เกี่ยวกับเรา
-          </a>
-          <a href="/contact" className="text-xl font-light text-white">
+          </NavLink>
+          <NavLink to="/contact" className="text-xl font-light text-white">
             ติดต่อ
-          </a>
+          </NavLink>
         </div>
       </div>
       <p className="text-xl font-light bg-[#1C0F36] text-white text-center py-6">

@@ -14,12 +14,14 @@ import Poster from "../pages/Services/Poster";
 import ShirtPatternDesign from "../pages/Services/ShirtPatternDesign";
 import MotionGraphic from "../pages/Services/MotionGraphic";
 import Photo from "../pages/Services/Photo";
+import Footer from "../Layouts/Footer";
 
 const Layout = () => {
   return (
     <div>
       <Nav />
       <Outlet />
+      <Footer />
     </div>
   );
 };

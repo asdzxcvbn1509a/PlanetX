@@ -118,7 +118,7 @@ const Services = () => {
               <h1 className="text-[32px] text-[#493678] font-semibold mb-2">
                 ออกแบบ
               </h1>
-              <hr className="text-[#303030] max-w-[1260px]" />
+              <hr className="text-[#303030] min-w-[1260px]" />
 
               {/* 🩷 ฟิลเตอร์แสดงเฉพาะที่เลือกไว้ */}
               {(!isAnyChecked || checkedType.treeD) && (

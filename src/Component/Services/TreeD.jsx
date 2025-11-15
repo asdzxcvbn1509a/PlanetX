@@ -4,39 +4,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
-import Duck from "../../assets/Services/TreeD/Duck.png";
-import Pudding from "../../assets/Services/TreeD/Pudding.png";
-import Base from "../../assets/Services/TreeD/Base.mp4";
 import { NavLink } from "react-router-dom";
+import ThreeDData from "../../data/ThreeDData";
 
 const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
-  const slides = [
-    {
-      type: "image",
-      src: Duck,
-      alt: "Duck",
-      style: "cartoon",
-      purpose: "personalArt",
-      period: "oneWeek",
-    },
-    {
-      type: "image",
-      src: Pudding,
-      alt: "Pudding",
-      style: "cartoon",
-      purpose: "personalArt",
-      period: "oneWeek",
-    },
-    {
-      type: "video",
-      src: Base,
-      alt: "Base",
-      style: "cartoon",
-      purpose: "promotion",
-      period: "oneWeek",
-    },
-  ];
-
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
@@ -49,7 +20,7 @@ const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
     (key) => checkedPeriod[key]
   );
 
-  const filteredSlides = slides.filter((item) => {
+  const filteredSlides = ThreeDData.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMatch =
@@ -86,7 +57,6 @@ const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
             ) : (
               <video
                 autoPlay
-                controls
                 loop
                 src={item.src}
                 className="w-full h-56 object-cover border shadow-lg"

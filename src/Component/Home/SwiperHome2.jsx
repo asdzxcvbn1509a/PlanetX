@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Israel from "../../assets/Services/Photo/Israel.jpeg";
+import Sixtysix from "../../assets/Services/ShirtPattern/Sixtysix.png";
+import Sleep from "../../assets/Services/Illustration/Sleep.png";
 
 const SwiperHome2 = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -7,23 +10,20 @@ const SwiperHome2 = () => {
   const movies = [
     {
       id: 1,
-      title: "Guardians of the Galaxy",
-      image:
-        "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&h=450&fit=crop",
+      title: "",
+      image: Sixtysix,
       color: "from-purple-900/50 to-pink-900/50",
     },
     {
       id: 2,
-      title: "Justice League",
-      image:
-        "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=800&h=450&fit=crop",
+      title: "",
+      image: Israel,
       color: "from-blue-900/50 to-gray-900/50",
     },
     {
       id: 3,
-      title: "Spider-Man",
-      image:
-        "https://images.unsplash.com/photo-1635863138275-d9b33299680b?w=800&h=450&fit=crop",
+      title: "",
+      image: Sleep,
       color: "from-red-900/50 to-blue-900/50",
     },
   ];
@@ -57,7 +57,6 @@ const SwiperHome2 = () => {
         zIndex: 20,
         opacity: 1,
         filter: "blur(2px) brightness(0.5)",
-
       };
     } else if (isRight) {
       return {

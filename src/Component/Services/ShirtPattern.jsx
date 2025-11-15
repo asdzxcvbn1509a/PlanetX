@@ -1,62 +1,13 @@
 import React, { useRef, useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
-
-import SixtySix from "../../assets/Services/ShirtPattern/SixtySix.png";
-import Thep from "../../assets/Services/ShirtPattern/Thep.png";
-import EightTeen from "../../assets/Services/ShirtPattern/EightTeen.png";
-import EightTeen2 from "../../assets/Services/ShirtPattern/EightTeen2.png";
-import Thep2 from "../../assets/Services/ShirtPattern/Thep2.png";
 import { NavLink } from "react-router-dom";
+import ShirtData from "../../data/ShirtData";
 
 const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
-  const slides = [
-    {
-      type: "image",
-      src: SixtySix,
-      alt: "SixtySix",
-      style: "minimal",
-      purpose: "brand",
-      period: "oneWeek",
-    },
-    {
-      type: "image",
-      src: Thep,
-      alt: "Thep",
-      style: "minimal",
-      purpose: "brand",
-      period: "oneWeek",
-    },
-    {
-      type: "image",
-      src: EightTeen,
-      altL: "EightTeen",
-      style: "minimal",
-      purpose: "brand",
-      period: "oneWeek",
-    },
-    {
-      type: "image",
-      src: EightTeen2,
-      alt: "EightTeen2",
-      style: "minimal",
-      purpose: "brand",
-      period: "oneWeek",
-    },
-    {
-      type: "image",
-      src: Thep2,
-      alt: "Thep2",
-      style: "minimal",
-      purpose: "brand",
-      period: "oneWeek",
-    },
-  ];
-
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
@@ -69,7 +20,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
     (key) => checkedPeriod[key]
   );
 
-  const filteredSlides = slides.filter((item) => {
+  const filteredSlides = ShirtData.filter((item) => {
     const styleMatch =
       stylesSelected.length === 0 || stylesSelected.includes(item.style);
     const purposeMach =
