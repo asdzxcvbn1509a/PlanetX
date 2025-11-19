@@ -13,6 +13,10 @@ import Character from "../Component/Services/Character";
 import ShirtPattern from "../Component/Services/ShirtPattern";
 import Motion from "../Component/Services/Motion";
 import Photo from "../Component/Services/Photo";
+import TypeMobile from "../Component/Services/TypeMobile";
+import StyleMobile from "../Component/Services/StyleMobile";
+import PurposeMobile from "../Component/Services/PurposeMobile";
+import PeriodMobile from "../Component/Services/PeriodMobile";
 
 const Services = () => {
   const [checkedType, setCheckedType] = useState({
@@ -82,24 +86,35 @@ const Services = () => {
   return (
     <div className="flex justify-center">
       <div className="pt-[88px]">
-        <div className="flex mb-[32px] mt-[16px]">
-          <NavLink to="/" className="text-[#888888] text-xl">
+        <div className="flex mb-[32px] xl:mt-[16px] md:mt-[12px]">
+          <NavLink to="/" className="text-[#888888] xl:text-xl md:text-base">
             หน้าหลัก
           </NavLink>
-          <h1 className="text-[#888888] text-xl">&nbsp; &gt; &nbsp;</h1>
-          <NavLink to="/services" className="text-[#303030] text-xl">
+          <h1 className="text-[#888888] xl:text-xl md:text-base">
+            &nbsp; &gt; &nbsp;
+          </h1>
+          <NavLink
+            to="/services"
+            className="text-[#303030] xl:text-xl text-base"
+          >
             บริการ
           </NavLink>
         </div>
 
-        <div className="flex gap-[8px] mb-[16px]">
-          <Funnel size={32} strokeWidth={3} className="text-[#312070]" />
-          <h1 className="text-[#303030] text-2xl">ค้นหาแบบละเอียด</h1>
+        <div className="flex gap-[8px] xl:mb-[16px]">
+          <Funnel
+            size={32}
+            strokeWidth={3}
+            className="text-[#312070] md:hidden xl:block"
+          />
+          <h1 className="text-[#303030] xl:text-2xl md:text-xl md:hidden xl:block">
+            ค้นหาแบบละเอียด
+          </h1>
         </div>
 
-        <div className="flex gap-6 items-start">
+        <div className="flex xl:gap-6 md:gap-[17px] items-start">
           {/* Sidebar */}
-          <div className="grid gap-4 w-[229px] shrink-0">
+          <div className="grid gap-4 w-[229px] shrink-0 md:hidden xl:block">
             <Type checkedType={checkedType} onChange={handleTypeChange} />
             <Style checkedStyle={checkedStyle} onChange={handleStyleChange} />
             <Purpose
@@ -111,14 +126,38 @@ const Services = () => {
               onChange={handlePeriodChange}
             />
           </div>
+          <div className="bg-[#F3DEFF] pb-[16px]">
+            <h1 className="text-[#303030] xl:text-2xl md:text-xl p-[15px] xl:hidden">
+              ค้นหาแบบละเอียด
+            </h1>
+            <div className="xl:hidden px-[15px]">
+              <hr />
+              <TypeMobile
+                checkedType={checkedType}
+                onChange={handleTypeChange}
+              />
+              <StyleMobile
+                checkedStyle={checkedStyle}
+                onChange={handleStyleChange}
+              />
+              <PurposeMobile
+                checkedPurpose={checkedPurpose}
+                onChange={handlePurposeChange}
+              />
+              <PeriodMobile
+                checkedPeriod={checkedPeriod}
+                onChange={handlePeriodChange}
+              />
+            </div>
+          </div>
 
           {/* Main content */}
           <div className="flex-1">
-            <div className="-mt-14">
-              <h1 className="text-[32px] text-[#493678] font-semibold mb-2">
+            <div className="xl:-mt-14">
+              <h1 className="xl:text-[32px] md:text-xl text-[#493678] font-semibold xl:mb-2 md:mb-[16px]">
                 ออกแบบ
               </h1>
-              <hr className="text-[#303030] min-w-[1260px]" />
+              <hr className="text-[#303030] xl:min-w-[1260px] md:min-w-[542px]" />
 
               {/* 🩷 ฟิลเตอร์แสดงเฉพาะที่เลือกไว้ */}
               {(!isAnyChecked || checkedType.treeD) && (
@@ -164,11 +203,17 @@ const Services = () => {
                 />
               )}
 
-              <h1 className="text-[32px] text-[#493678] font-semibold mb-2 mt-4">
+              <h1 className="xl:text-[32px] md:text-xl text-[#493678] font-semibold mb-2 mt-4">
                 โปรดักชั่น
               </h1>
               <hr className="text-[#303030] max-w-[1260px]" />
-              {(!isAnyChecked || checkedType.motion) && <Motion />}
+              {(!isAnyChecked || checkedType.motion) && (
+                <Motion
+                  checkedStyle={checkedStyle}
+                  checkedPurpose={checkedPurpose}
+                  checkedPeriod={checkedPeriod}
+                />
+              )}
               {(!isAnyChecked || checkedType.photo) && (
                 <Photo
                   checkedStyle={checkedStyle}

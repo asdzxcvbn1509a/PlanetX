@@ -15,8 +15,8 @@ const Poster = () => {
             บริการ
           </NavLink>
           <h1 className="text-[#888888] text-xl">&nbsp; &gt; &nbsp;</h1>
-          <NavLink to="/services/three-d" className="text-[#303030] text-xl">
-            Illustration
+          <NavLink to="/services/poster" className="text-[#303030] text-xl">
+            โปสเตอร์
           </NavLink>
         </div>
         <div>
@@ -24,7 +24,7 @@ const Poster = () => {
             ออกแบบ
           </h1>
           <hr className="text-[#303030]" />
-          <h1 className="text-xl mt-[13px] mb-6">Illustration</h1>
+          <h1 className="text-xl mt-[13px] mb-6">โปสเตอร์</h1>
         </div>
         <div className="grid grid-cols-3 gap-[50px]">
           {PosterData.map((item) =>

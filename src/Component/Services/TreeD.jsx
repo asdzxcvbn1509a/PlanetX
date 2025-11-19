@@ -35,16 +35,30 @@ const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filteredSlides.length === 0 ? (
         ""
       ) : (
-        <h1 className="text-xl mt-[13px] mb-6">3D</h1>
+        <h1 className="xl:text-xl md:text-base xl:mt-[13px] md:mt-[9px] xl:mb-6 md:mb-[10px]">
+          3D
+        </h1>
       )}
 
       <Swiper
-        slidesPerView={3}
-        spaceBetween={26}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 9,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 18,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 26,
+          },
+        }}
         pagination={{ clickable: true }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="max-w-[1264px] !ml-0"
+        className="xl:max-w-[1264px] md:max-w-[541px] !ml-0"
       >
         {filteredSlides.map((item, index) => (
           <SwiperSlide key={index}>
@@ -52,14 +66,15 @@ const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-full h-56 object-cover border shadow-lg"
+                className="object-cover border shadow-lg"
               />
             ) : (
               <video
+                muted
                 autoPlay
                 loop
                 src={item.src}
-                className="w-full h-56 object-cover border shadow-lg"
+                className="object-cover border shadow-lg"
               ></video>
             )}
           </SwiperSlide>
@@ -69,13 +84,13 @@ const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filteredSlides.length === 0 ? (
         ""
       ) : (
-        <div className="flex justify-end mt-[27px]">
+        <div className="flex justify-end xl:mt-[27px] md:mt-[14px]">
           <NavLink
             to="/services/three-d"
             style={{
               background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
             }}
-            className="text-base text-white border border-white py-1 px-[21px] rounded-md cursor-pointer"
+            className="xl:text-base md:text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] rounded-md cursor-pointer"
           >
             ดูเพิ่มเติม
           </NavLink>

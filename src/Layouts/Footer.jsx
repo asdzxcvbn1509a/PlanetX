@@ -4,30 +4,52 @@ import { NavLink, Outlet } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <div className="text-center bg-[#3B2862] mt-[96px]">
-        <div className="py-10">
-          <h1 className="text-[40px] text-white">Planet x</h1>
-          <p className="text-xl font-light text-white">
-            Planet x Media Studio สำหรับทุกความต้องการของคุณ
-          </p>
+      <div className="xl:text-center bg-[#3B2862] xl:mt-[96px] md:mt-[43px] md:pl-[24px] xl:pl-0">
+        <div className="xl:py-10 md:pt-[24px]">
+          <h1 className="xl:text-[40px] md:text-xl text-white md:font-medium xl:font-normal md:mb-[10px] xl:mb-[0px]">
+            Planet x
+          </h1>
+          <div className="xl:flex justify-center">
+            <p className="xl:text-xl md:text-[11px] font-light text-white">
+              Planet x Media Studio '
+            </p>
+            <p className="xl:text-xl md:text-[11px] font-light text-white">
+              สำหรับทุกความต้องการของคุณ'
+            </p>
+          </div>
         </div>
-        <hr className="max-w-[1264px] mx-auto text-white" />
-        <div className="flex justify-around max-w-[700px] mx-auto py-6">
-          <NavLink to="/" className="text-xl font-light text-white">
+        <hr className="max-w-[1264px] mx-auto text-white md:hidden xl:block" />
+        <div
+          style={{ fontFamily: '"Jost", sans-serif' }}
+          className="xl:flex xl:justify-around md:gap-[24px] max-w-[700px] xl:mx-auto xl:py-6 md:pb-[12px] md:pt-[26px] md:grid"
+        >
+          <NavLink to="/" className="xl:text-xl font-light text-white">
             หน้าหลัก
           </NavLink>
-          <NavLink to="/services" className="text-xl font-light text-white">
+          <NavLink
+            to="/services"
+            className="xl:text-xl md:text-[14px] font-light text-white"
+          >
             บริการ
           </NavLink>
-          <NavLink to="/about-us" className="text-xl font-light text-white">
+          <NavLink
+            to="/about-us"
+            className="xl:text-xl md:text-[14px] font-light text-white"
+          >
             เกี่ยวกับเรา
           </NavLink>
-          <NavLink to="/contact" className="text-xl font-light text-white">
+          <NavLink
+            to="/contact"
+            className="xl:text-xl md:text-[14px] font-light text-white"
+          >
             ติดต่อ
           </NavLink>
         </div>
       </div>
-      <p className="text-xl font-light bg-[#1C0F36] text-white text-center py-6">
+      <p
+        style={{ fontFamily: '"Jost", sans-serif' }}
+        className="xl:text-xl md:text-[10px] font-light bg-[#1C0F36] text-white text-center xl:py-6 md:py-[12px]"
+      >
         © 2025 Planet x Media Studio. All rights reserved.
       </p>
     </div>

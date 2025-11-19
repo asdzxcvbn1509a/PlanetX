@@ -36,6 +36,7 @@ const ThreeD = () => {
               />
             ) : (
               <video
+                muted
                 autoPlay
                 loop
                 src={item.src}

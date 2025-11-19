@@ -15,11 +15,13 @@ import ShirtPatternDesign from "../pages/Services/ShirtPatternDesign";
 import MotionGraphic from "../pages/Services/MotionGraphic";
 import Photo from "../pages/Services/Photo";
 import Footer from "../Layouts/Footer";
+import ScrollToTop from "../Component/ScrollToTop";
 
 const Layout = () => {
   return (
     <div>
       <Nav />
+      <ScrollToTop />
       <Outlet />
       <Footer />
     </div>

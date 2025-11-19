@@ -36,18 +36,23 @@ const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filterdSlides.length === 0 ? (
         ""
       ) : (
-        <h1 className="text-xl mt-[13px] mb-6">โปสเตอร์ / ป้ายโฆษณา</h1>
+        <h1 className="xl:text-xl md:text-base xl:mt-[13px] xl:mb-6 md:mt-[9px] md:mb-[10px]">
+          โปสเตอร์ / ป้ายโฆษณา
+        </h1>
       )}
 
       <Swiper
-        slidesPerView={3}
-        spaceBetween={26}
+        breakpoints={{
+          0: { slidesPerView: 1, spaceBetween: 9 },
+          768: { slidesPerView: 2, spaceBetween: 18 },
+          1024: { slidesPerView: 3, spaceBetween: 26 },
+        }}
         pagination={{
           clickable: true,
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="max-w-[1264px] !ml-0"
+        className="xl:max-w-[1264px] md:max-w-[541px] !ml-0"
       >
         {filterdSlides.map((item, index) => (
           <SwiperSlide key={index}>
@@ -55,7 +60,7 @@ const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-full h-56 object-cover border shadow-lg"
+                className="object-cover border shadow-lg"
               ></img>
             ) : (
               <video></video>
@@ -66,13 +71,13 @@ const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filterdSlides.length === 0 ? (
         ""
       ) : (
-        <div className="flex justify-end mt-[27px]">
+        <div className="flex justify-end xl:mt-[27px] md:mt-[14px]">
           <NavLink
             to="/services/poster"
             style={{
               background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
             }}
-            className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+            className="xl:text-base md:text-xs text-white border border-white xl:py-1 xl:px-[21px] px-[9px] py-[6px] box-border  rounded-md cursor-pointer"
           >
             ดูเพิ่มเติม
           </NavLink>

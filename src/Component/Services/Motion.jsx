@@ -1,55 +1,82 @@
 import React, { useRef, useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
-
-import Israel from "../../assets/Services/Photo/Israel.jpeg";
 import { NavLink } from "react-router-dom";
+import MotionData from "../../data/MotionData";
 
-const ShirtPattern = () => {
-  const slides = [{ type: "image", src: Israel, alt: "Israel" }];
+const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
+  const stylesSelected = Object.keys(checkedStyle).filter(
+    (key) => checkedStyle[key]
+  );
+
+  const purposesSelected = Object.keys(checkedPurpose).filter(
+    (key) => checkedPurpose[key]
+  );
+
+  const periodSelected = Object.keys(checkedPeriod).filter(
+    (key) => checkedPeriod[key]
+  );
+
+  const filteredSlides = MotionData.filter((item) => {
+    const styleMatch =
+      stylesSelected.length === 0 || stylesSelected.includes(item.style);
+    const purposeMatch =
+      purposesSelected.length === 0 || purposesSelected.includes(item.purpose);
+    const periodMatch =
+      periodSelected.length === 0 || periodSelected.includes(item.period);
+    return styleMatch && purposeMatch && periodMatch;
+  });
+
   return (
     <div>
-      <h1 className="text-xl mt-[13px] mb-6">โมชั่นกราฟฟิก</h1>
+      <h1 className="xl:text-xl md:text-base xl:mt-[13px] xl:mb-6 md:mt-[9px] md:mb-[10px]">
+        โมชั่นกราฟฟิก
+      </h1>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={26}
+        breakpoints={{
+          0: { slidesPerView: 1, spaceBetween: 9 },
+          768: { slidesPerView: 2, spaceBetween: 18 },
+          1024: { slidesPerView: 3, spaceBetween: 26 },
+        }}
         pagination={{
           clickable: true,
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="max-w-[1264px] !ml-0"
+        className="xl:max-w-[1264px] md:max-w-[541px] !ml-0"
       >
-        {slides.map((item, index) => (
+        {filteredSlides.map((item, index) => (
           <SwiperSlide key={index}>
             {item.type === "image" ? (
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-full h-56 object-cover border shadow-lg"
+                className="object-cover border shadow-lg"
               ></img>
             ) : (
-              <video
+              <iframe
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
                 controls
-                loop
                 src={item.src}
-                className="w-full h-56 object-cover border shadow-lg"
-              ></video>
+                title={item.alt}
+                className="w-full xl:h-[225px] object-cover border shadow-lg"
+              ></iframe>
             )}
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-end mt-[27px]">
+      <div className="flex justify-end xl:mt-[27px] md:mt-[14px]">
         <NavLink
           to="/services/motion"
           style={{
             background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
           }}
-          className="text-base text-white border border-white py-1 px-[21px] box-border  rounded-md cursor-pointer"
+          className="xl:text-base md:text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] box-border  rounded-md cursor-pointer"
         >
           ดูเพิ่มเติม
         </NavLink>

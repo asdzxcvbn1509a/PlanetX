@@ -1,6 +1,6 @@
 import React from "react";
 import NavLogo from "../assets/NavLogo.png";
-import { Search } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import Switch from "../Component/Switch";
 import { NavLink } from "react-router-dom";
 
@@ -21,7 +21,6 @@ const Nav = () => {
             className="w-[174px] h-[23px] cursor-pointer"
           />
         </NavLink>
-
         <div className="flex gap-[64.05px]">
           <NavLink
             to="/"
@@ -74,6 +73,7 @@ const Nav = () => {
             </button>
           </div>
           <Switch />
+          {/* Hamburger menu icon: show on mobile only */}
         </div>
       </div>
     </div>

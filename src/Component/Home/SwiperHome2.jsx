@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Israel from "../../assets/Services/Photo/Israel.jpeg";
 import Sixtysix from "../../assets/Services/ShirtPattern/Sixtysix.png";
 import Sleep from "../../assets/Services/Illustration/Sleep.png";
@@ -76,8 +75,8 @@ const SwiperHome2 = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 p-4 overflow-hidden pb-[79px]">
-      <h1 className="text-[32px] text-white text-center pt-[48px]">
+    <div className="bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 xl:p-4 overflow-hidden">
+      <h1 className="xl:text-[32px] text-xl text-white text-center xl:pt-[48px] md:pt-[51px] md:-mb-10 xl:-mb-0">
         บริการยอดนิยม
       </h1>
       <div className="w-full max-w-7xl relative mx-auto">
@@ -86,7 +85,7 @@ const SwiperHome2 = () => {
           {movies.map((movie, index) => (
             <div
               key={movie.id}
-              className="absolute w-full max-w-[606px] max-h-[345px] h-full transition-all duration-300 ease-out cursor-pointer shadow-2xl"
+              className="absolute w-full xl:max-w-[606px] xl:max-h-[345px] md:max-w-[507px] md:max-h-[289px] h-full transition-all duration-300 ease-out cursor-pointer shadow-2xl"
               style={getSlideStyle(index)}
               onClick={() => {
                 if (index !== currentIndex) {
@@ -124,7 +123,7 @@ const SwiperHome2 = () => {
         <button onClick={handleNext} aria-label="Next"></button>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center gap-3 -mt-6 ">
+        <div className="flex justify-center gap-3 xl:-mt-6 md:-mt-[54px] md:pb-[25px] xl:pb-[48px]">
           {movies.map((_, index) => (
             <button
               key={index}
