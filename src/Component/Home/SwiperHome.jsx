@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
@@ -7,6 +7,11 @@ import Design from "../../assets/Home/Design.png";
 import Production from "../../assets/Home/Production.png";
 import Promotion from "../../assets/Home/Promotion.mp4";
 import PlanetX from "../../assets/Home/PlanetX.mp4";
+import PlanetXMobile from "../../assets/Home/PlanetXMobile.mp4";
+import PromotionMobile from "../../assets/Home/PromotionMobile.mp4";
+import EasyMobile from "../../assets/Home/EasyMobile.png";
+import DesignMobile from "../../assets/Home/DesignMobile.png";
+import ProductionMobile from "../../assets/Home/ProductionMobile.png";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,6 +19,7 @@ import "swiper/css/navigation";
 
 const SwiperHome = () => {
   const swiperRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const swiperData = [
     { type: "video", src: PlanetX, alt: "PlanetX" },
@@ -23,8 +29,44 @@ const SwiperHome = () => {
     { type: "image", src: Production, alt: "Production", duration: 5000 },
   ];
 
+  const swiperDataMobile = [
+    { type: "video", src: PlanetXMobile, alt: "PlanetXMobile" },
+    { type: "video", src: PromotionMobile, alt: "PromotionMobile" },
+    { type: "image", src: EasyMobile, alt: "EasyMobile", duration: 5000 },
+    { type: "image", src: DesignMobile, alt: "DesignMobile", duration: 5000 },
+    {
+      type: "image",
+      src: ProductionMobile,
+      alt: "ProductionMobile",
+      duration: 5000,
+    },
+  ];
+
+  const dataToUse = isMobile ? swiperDataMobile : swiperData;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const startSlideTimer = (swiper) => {
-    const currentSlide = swiperData[swiper.realIndex];
+    const currentSlide = dataToUse[swiper.realIndex];
+    const video = document.querySelectorAll("video")[swiper.realIndex];
+
+    if (currentSlide.type === "video" && video) {
+      video.currentTime = 0;
+      video.play();
+      video.onended = () => swiper.slideNext();
+    } else {
+      setTimeout(() => swiper.slideNext(), currentSlide.duration);
+    }
+  };
+
+  const startSlideTimerMobile = (swiper) => {
+    const currentSlide = swiperDataMobile[swiper.realIndex];
     const video = document.querySelectorAll("video")[swiper.realIndex];
 
     if (currentSlide.type === "video" && video) {
@@ -40,7 +82,7 @@ const SwiperHome = () => {
     <div className="w-full">
       <Swiper
         pagination={{ clickable: true }}
-        navigation={true}
+        navigation={!isMobile}
         modules={[Pagination, Navigation]}
         loop={true}
         className="w-full xl:h-[543px] md:h-[314.49px]"
@@ -52,10 +94,10 @@ const SwiperHome = () => {
           startSlideTimer(swiper);
         }}
       >
-        {swiperData.map((item, index) => (
+        {dataToUse.map((item, index) => (
           <SwiperSlide key={index}>
             {item.type === "video" ? (
-              <video muted playsInline className="w-full h-full object-fill">
+              <video muted playsInline className="w-full h-full object-cover">
                 <source src={item.src} type="video/mp4" />
               </video>
             ) : (
@@ -68,6 +110,36 @@ const SwiperHome = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <style>{`
+        .swiper-button-next,
+        .swiper-button-prev {
+          color: black;
+          font-size: 40px !important;
+          font-weight: extrabold !important;
+          transition: 0.3s;
+          width:40px;
+          height:40px;
+          padding:10px;
+          background-color: rgba(255, 255, 255, 0.5);
+          border: 1px solid black;
+          border-radius: 100%;
+          right: 22px !important;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .swiper-button-prev {
+        left:22px !important;}
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+          font-size: 22px; /* ขนาดลูกศร */
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: #303030 !important;
+        }
+        
+      `}</style>
     </div>
   );
 };

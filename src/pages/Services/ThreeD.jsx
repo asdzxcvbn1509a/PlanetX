@@ -4,29 +4,29 @@ import ThreeDData from "../../data/ThreeDData";
 
 const ThreeD = () => {
   return (
-    <div className="flex justify-center">
-      <div className="mt-[88px]">
-        <div className="flex mb-[32px] mt-[16px]">
-          <NavLink to="/" className="text-[#888888] text-xl">
+    <div className="flex justify-center pb-[150px]">
+      <div className="xl:mt-[88px] md:mt-[72px]">
+        <div className="flex mb-[32px] xl:mt-[16px] md:mt-[12px]">
+          <NavLink to="/" className="text-[#888888] xl:text-xl md:text-base">
             หน้าหลัก
           </NavLink>
-          <h1 className="text-[#888888] text-xl">&nbsp; &gt; &nbsp;</h1>
-          <NavLink to="/services" className="text-[#888888] text-xl">
+          <h1 className="text-[#888888] xl:text-xl md:text-base">&nbsp; &gt; &nbsp;</h1>
+          <NavLink to="/services" className="text-[#888888] xl:text-xl md:text-base">
             บริการ
           </NavLink>
-          <h1 className="text-[#888888] text-xl">&nbsp; &gt; &nbsp;</h1>
-          <NavLink to="/services/three-d" className="text-[#303030] text-xl">
+          <h1 className="text-[#888888] xl:text-xl md:text-base">&nbsp; &gt; &nbsp;</h1>
+          <NavLink to="/services/three-d" className="text-[#303030] xl:text-xl md:text-base">
             3D
           </NavLink>
         </div>
         <div>
-          <h1 className="text-[32px] text-[#493678] font-semibold mb-2">
+          <h1 className="xl:text-[32px] md:text-xl text-[#493678] xl:font-semibold xl:mb-2 md:mb-4">
             ออกแบบ
           </h1>
           <hr className="text-[#303030]" />
-          <h1 className="text-xl mt-[13px] mb-6">3D</h1>
+          <h1 className="xl:text-xl md:text-base xl:mt-[13px] xl:mb-6 md:my-[9px]">3D</h1>
         </div>
-        <div className="grid grid-cols-3 gap-[50px]">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 xl:gap-[50px] md:gap-[32px] md:max-w-[794px] xl:max-w-full">
           {ThreeDData.map((item) =>
             item.type === "image" ? (
               <img

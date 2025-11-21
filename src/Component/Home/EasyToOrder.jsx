@@ -5,24 +5,24 @@ import Garantee from "../../assets/Home/Garantee.PNG";
 
 const EasyToOrder = () => {
   return (
-    <div className="xl:pb-[78px] md:pb-[48px] bg-[#faf2fb]">
-      <h1 className="text-center xl:text-[32px] md:text-xl text-[#481DA0] xl:pt-[88px] md:pt-[25px] xl:font-bold md:font-normal mb-[24px]">
+    <div className="xl:pb-[78px] md:pb-[48px] pb-[40px] bg-[#faf2fb]">
+      <h1 className="text-center xl:text-[32px] md:text-xl text-base text-[#481DA0] xl:pt-[88px] md:pt-[25px] pt-[35px] xl:font-bold md:font-normal font-semibold xl:mb-[24px] md:mb-[28px] mb-[17px]">
         สั่งงานง่าย แก้งานดี คุณภาพเกินร้อย
       </h1>
-      <div className="flex justify-center xl:gap-[80px] md:gap-[58px]">
+      <div className="md:flex grid justify-center xl:gap-[80px] md:gap-[58px] gap-[40px]">
         <div className="text-center">
           <img
             src={EasyToOrderImage}
             alt="EasyToOrderImage"
-            className="mx-auto mb-[16px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px]"
+            className="mx-auto xl:mb-[16px] md:mb-[10px] mb-[5px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px] w-[99px] h-[99px]"
           />
           <h2 className="xl:text-[32px] text-base text-[#303030]">
             สั่งงานง่าย
           </h2>
-          <p className="xl:text-xl md:text-xs text-[#303030]">
+          <p className="xl:text-xl text-xs text-[#303030]">
             ไม่ว่าคุณจะมีประสบการณ์หรือไม่
           </p>
-          <p className="xl:text-xl md:text-xs text-[#303030]">
+          <p className="xl:text-xl text-xs text-[#303030]">
             เราพร้อมแนะนำทุกขั้นตอนให้เข้าใจง่ายและชัดเจน
           </p>
         </div>
@@ -30,9 +30,9 @@ const EasyToOrder = () => {
           <img
             src={EasyToEdit}
             alt="EasyToEdit"
-            className="mx-auto mb-[16px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px]"
+            className="mx-auto mb-[16px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px] w-[99px] h-[99px]"
           />
-          <h2 className="xl:text-[32px] md:text-base text-[#303030]">
+          <h2 className="xl:text-[32px] text-base text-[#303030]">
             แก้งานง่าย
           </h2>
           <p className="xl:text-xl text-xs text-[#303030]">
@@ -46,15 +46,15 @@ const EasyToOrder = () => {
           <img
             src={Garantee}
             alt="Garantee"
-            className="mx-auto mb-[16px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px]"
+            className="mx-auto mb-[16px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px] w-[99px] h-[99px]"
           />
-          <h2 className="xl:text-[32px] md:text-base text-[#303030]">
+          <h2 className="xl:text-[32px] text-base text-[#303030]">
             รับประกันคุณภาพ
           </h2>
-          <p className="xl:text-xl md:text-xs text-[#303030]">
+          <p className="xl:text-xl text-xs text-[#303030]">
             เชื่อถือได้ว่าผลงานทุกชิ้นของเราจะโดดเด่น
           </p>
-          <p className="xl:text-xl md:text-xs text-[#303030]">
+          <p className="xl:text-xl text-xs text-[#303030]">
             สร้างความประทับใจเกินความคาดหมาย
           </p>
         </div>

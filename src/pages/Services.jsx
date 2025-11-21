@@ -85,7 +85,7 @@ const Services = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="pt-[88px]">
+      <div className="xl:pt-[88px] md:pt-[72px]">
         <div className="flex mb-[32px] xl:mt-[16px] md:mt-[12px]">
           <NavLink to="/" className="text-[#888888] xl:text-xl md:text-base">
             หน้าหลัก
@@ -114,7 +114,7 @@ const Services = () => {
 
         <div className="flex xl:gap-6 md:gap-[17px] items-start">
           {/* Sidebar */}
-          <div className="grid gap-4 w-[229px] shrink-0 md:hidden xl:block">
+          <div className="xl:grid gap-4 w-[229px] shrink-0 md:hidden xl:block">
             <Type checkedType={checkedType} onChange={handleTypeChange} />
             <Style checkedStyle={checkedStyle} onChange={handleStyleChange} />
             <Purpose
