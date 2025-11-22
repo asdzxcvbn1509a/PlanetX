@@ -35,7 +35,7 @@ const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filteredSlides.length === 0 ? (
         ""
       ) : (
-        <h1 className="xl:text-xl md:text-base xl:mt-[13px] md:mt-[9px] xl:mb-6 md:mb-[10px]">
+        <h1 className="xl:text-xl text-base font-light md:font-normal xl:mt-[13px] md:mt-[9px] mt-[11px] mb-[7px] xl:mb-6 md:mb-[10px] mb-[7px]">
           3D
         </h1>
       )}
@@ -84,13 +84,13 @@ const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filteredSlides.length === 0 ? (
         ""
       ) : (
-        <div className="flex justify-end xl:mt-[27px] md:mt-[14px]">
+        <div className="flex justify-end xl:mt-[27px] md:mt-[14px] mt-[12px] md:max-w-[541px] xl:max-w-full">
           <NavLink
             to="/services/three-d"
             style={{
               background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
             }}
-            className="xl:text-base md:text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] rounded-md cursor-pointer"
+            className="xl:text-base text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] px-[7px] py-[6px] rounded-md cursor-pointer font-light md:font-normal"
           >
             ดูเพิ่มเติม
           </NavLink>

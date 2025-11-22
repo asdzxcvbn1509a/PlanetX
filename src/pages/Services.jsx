@@ -80,22 +80,26 @@ const Services = () => {
     }));
   };
 
-  // 🧠 ถ้ามีติ๊กอันไหนไว้ จะกรองเฉพาะอันนั้น
   const isAnyChecked = Object.values(checkedType).some((v) => v);
 
   return (
+    // 1. เอา div เปล่าออก ให้เหลือแค่ flex justify-center ของ Wrapper นอกสุด
     <div className="flex justify-center">
-      <div className="xl:pt-[88px] md:pt-[72px]">
-        <div className="flex mb-[32px] xl:mt-[16px] md:mt-[12px]">
-          <NavLink to="/" className="text-[#888888] xl:text-xl md:text-base">
+      {/* 2. ตัวนี้ต้องมี w-full เพื่อคุมไม่ให้ Swiper ดัน layout มือถือพัง */}
+      <div className="xl:pt-[88px] pt-[72px] w-full md:w-[794px] xl:w-[1440px] px-4 xl:px-0">
+        <div className="flex md:mb-[32px] mb-[24px] xl:mt-[16px] md:mt-[12px] mt-[16px]">
+          <NavLink
+            to="/"
+            className="text-[#888888] xl:text-xl md:text-base text-sm"
+          >
             หน้าหลัก
           </NavLink>
-          <h1 className="text-[#888888] xl:text-xl md:text-base">
+          <h1 className="text-[#888888] xl:text-xl md:text-base text-sm">
             &nbsp; &gt; &nbsp;
           </h1>
           <NavLink
             to="/services"
-            className="text-[#303030] xl:text-xl text-base"
+            className="text-[#303030] xl:text-xl md:text-base text-sm"
           >
             บริการ
           </NavLink>
@@ -105,16 +109,17 @@ const Services = () => {
           <Funnel
             size={32}
             strokeWidth={3}
-            className="text-[#312070] md:hidden xl:block"
+            className="text-[#312070] hidden xl:block"
           />
-          <h1 className="text-[#303030] xl:text-2xl md:text-xl md:hidden xl:block">
+          <h1 className="text-[#303030] xl:text-2xl md:text-xl hidden xl:block">
             ค้นหาแบบละเอียด
           </h1>
         </div>
 
-        <div className="flex xl:gap-6 md:gap-[17px] items-start">
-          {/* Sidebar */}
-          <div className="xl:grid gap-4 w-[229px] shrink-0 md:hidden xl:block">
+        {/* 3. ใส่ justify-center ตรงนี้ เพื่อให้ก้อนเนื้อหา (Sidebar+Content) อยู่ตรงกลางในจอ Tablet/PC */}
+        <div className="flex flex-col md:flex-row xl:flex-row xl:gap-6 md:gap-[17px] items-start justify-center">
+          {/* Sidebar (Desktop Only) */}
+          <div className="xl:grid gap-4 w-[229px] shrink-0 hidden xl:block">
             <Type checkedType={checkedType} onChange={handleTypeChange} />
             <Style checkedStyle={checkedStyle} onChange={handleStyleChange} />
             <Purpose
@@ -126,12 +131,13 @@ const Services = () => {
               onChange={handlePeriodChange}
             />
           </div>
-          <div className="bg-[#F3DEFF] pb-[16px]">
-            <h1 className="text-[#303030] xl:text-2xl md:text-xl p-[15px] xl:hidden">
+
+          {/* Mobile Filter (Mobile Only) */}
+          <div className="bg-[#F3DEFF] pb-[16px] w-full md:w-[235px] xl:hidden mb-6">
+            <h1 className="text-white font-medium md:font-normal xl:text-2xl md:text-xl text-base p-[15px] xl:hidden bg-[#391F79] rounded-md">
               ค้นหาแบบละเอียด
             </h1>
-            <div className="xl:hidden px-[15px]">
-              <hr />
+            <div className="xl:hidden px-[15px] grid gap-[24px] md:gap-0 justify-center">
               <TypeMobile
                 checkedType={checkedType}
                 onChange={handleTypeChange}
@@ -152,14 +158,14 @@ const Services = () => {
           </div>
 
           {/* Main content */}
-          <div className="flex-1">
+          {/* ใส่ md:max-w-[542px] เพื่อคุมความกว้างใน Tablet ไม่ให้ยืดเกินไป */}
+          <div className="flex-1 w-full min-w-0 md:max-w-[542px] xl:max-w-full">
             <div className="xl:-mt-14">
-              <h1 className="xl:text-[32px] md:text-xl text-[#493678] font-semibold xl:mb-2 md:mb-[16px]">
+              <h1 className="xl:text-[32px] text-xl text-[#493678] font-semibold xl:mb-2 md:mb-[16px] mb-[11px]">
                 ออกแบบ
               </h1>
-              <hr className="text-[#303030] xl:min-w-[1260px] md:min-w-[542px]" />
+              <hr className="text-[#303030] md:w-[542px] xl:w-full" />
 
-              {/* 🩷 ฟิลเตอร์แสดงเฉพาะที่เลือกไว้ */}
               {(!isAnyChecked || checkedType.treeD) && (
                 <TreeD
                   checkedStyle={checkedStyle}
@@ -203,10 +209,10 @@ const Services = () => {
                 />
               )}
 
-              <h1 className="xl:text-[32px] md:text-xl text-[#493678] font-semibold mb-2 mt-4">
+              <h1 className="xl:text-[32px] text-xl text-[#493678] font-semibold xl:mb-2 md:mb-[16px] mb-[11px]">
                 โปรดักชั่น
               </h1>
-              <hr className="text-[#303030] max-w-[1260px]" />
+              <hr className="text-[#303030] md:w-[542px] xl:w-full" />
               {(!isAnyChecked || checkedType.motion) && (
                 <Motion
                   checkedStyle={checkedStyle}

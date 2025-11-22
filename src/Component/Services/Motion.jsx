@@ -32,7 +32,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
 
   return (
     <div>
-      <h1 className="xl:text-xl md:text-base xl:mt-[13px] xl:mb-6 md:mt-[9px] md:mb-[10px]">
+      <h1 className="xl:text-xl text-base font-light md:font-normal xl:mt-[13px] md:mt-[9px] mt-[11px] mb-[7px] xl:mb-6 md:mb-[10px]">
         โมชั่นกราฟฟิก
       </h1>
       <Swiper
@@ -64,19 +64,19 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
                 controls
                 src={item.src}
                 title={item.alt}
-                className="w-full xl:h-[225px] object-cover border shadow-lg"
+                className="w-full xl:h-[225px] h-[200px] md:h-[147px] object-cover border shadow-lg"
               ></iframe>
             )}
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-end xl:mt-[27px] md:mt-[14px]">
+      <div className="flex justify-end xl:mt-[27px] md:mt-[14px] mt-[12px] md:max-w-[541px] xl:max-w-full">
         <NavLink
           to="/services/motion"
           style={{
             background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
           }}
-          className="xl:text-base md:text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] box-border  rounded-md cursor-pointer"
+          className="xl:text-base text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] px-[7px] py-[6px] rounded-md cursor-pointer font-light md:font-normal"
         >
           ดูเพิ่มเติม
         </NavLink>

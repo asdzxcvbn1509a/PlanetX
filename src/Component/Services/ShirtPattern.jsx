@@ -35,7 +35,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filteredSlides.length === 0 ? (
         ""
       ) : (
-        <h1 className="xl:text-xl text-base xl:mt-[13px] xl:mb-6 md:mt-[9px] md:mb-[10px]">
+        <h1 className="xl:text-xl text-base font-light md:font-normal xl:mt-[13px] mt-[17px] md:mt-[9px] mb-[7px] xl:mb-6 md:mb-[10px]">
           ออกแบบลายเสื้อ
         </h1>
       )}
@@ -70,13 +70,13 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filteredSlides.length === 0 ? (
         ""
       ) : (
-        <div className="flex justify-end xl:mt-[27px] md:mt-[14px]">
+        <div className="flex justify-end xl:mt-[27px] md:mt-[14px] mt-[12px] md:max-w-[541px] xl:max-w-full">
           <NavLink
             to="/services/shirt"
             style={{
               background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
             }}
-            className="xl:text-base md:text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] box-border  rounded-md cursor-pointer"
+            className="xl:text-base text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] px-[7px] py-[6px] rounded-md cursor-pointer font-light md:font-normal"
           >
             ดูเพิ่มเติม
           </NavLink>

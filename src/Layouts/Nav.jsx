@@ -111,7 +111,7 @@ const Nav = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="fixed top-[72px] left-0 w-full h-full z-[100] p-5 gap-4 flex flex-col text-[#303030] xl:hidden animate-fadeIn bg-[#FAF2FB] text-xl">
+        <div className="fixed top-[72px] left-0 w-full h-full z-[100] p-5 md:gap-4 gap-[25px] flex flex-col text-[#303030] xl:hidden animate-fadeIn bg-[#FAF2FB] md:text-xl">
           <NavLink to="/" onClick={() => setIsOpen(!isOpen)}>
             หน้าหลัก
           </NavLink>
