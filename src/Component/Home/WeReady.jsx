@@ -1,6 +1,6 @@
 import React from "react";
-import AboutUs from "../../assets/Home/AboutUs.png";
-import OurServices from "../../assets/Home/OurServices.png";
+import AboutUs from "../../assets/Home/AboutUs.webp";
+import OurServices from "../../assets/Home/OurServices.webp";
 import { NavLink } from "react-router-dom";
 
 const WeReady = () => {
@@ -26,6 +26,7 @@ const WeReady = () => {
         {/* Our Services */}
         <div className="relative flex flex-col items-center">
           <img
+            loading="lazy"
             src={OurServices}
             alt="AboutUs"
             className="xl:w-[564px] xl:h-[321px] md:w-[361.94px] md:h-[206px] w-[282px] h-[161px] border bg-white"
@@ -37,6 +38,7 @@ const WeReady = () => {
         {/* About Us */}
         <div className="relative flex flex-col items-center">
           <img
+            loading="lazy"
             src={AboutUs}
             alt="OurServices"
             className="xl:w-[564px] xl:h-[321px] md:w-[361.94px] md:h-[206px] border bg-white w-[282px] h-[161px]"

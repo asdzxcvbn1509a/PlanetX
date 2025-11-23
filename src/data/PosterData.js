@@ -1,9 +1,9 @@
-import Kmutt from "../assets/Services/Poster/Kmutt.png";
-import TwentyFour from "../assets/Services/Poster/TwentyFour.png";
-import ThisSong from "../assets/Services/Poster/ThisSong.png";
-import Kung from "../assets/Services/Poster/Kung.png";
-import Cheer from "../assets/Services/Poster/Cheer.png";
-import Audition from "../assets/Services/Poster/Audition.png";
+import Kmutt from "../assets/Services/Poster/Kmutt.webp";
+import TwentyFour from "../assets/Services/Poster/TwentyFour.webp";
+import ThisSong from "../assets/Services/Poster/ThisSong.webp";
+import Kung from "../assets/Services/Poster/Kung.webp";
+import Cheer from "../assets/Services/Poster/Cheer.webp";
+import Audition from "../assets/Services/Poster/Audition.webp";
 
 const PosterData = [
   {

@@ -1,7 +1,7 @@
 import React from "react";
-import EasyToOrderImage from "../../assets/Home/EasyToOrder.PNG";
-import EasyToEdit from "../../assets/Home/EasyToEdit.PNG";
-import Garantee from "../../assets/Home/Garantee.PNG";
+import EasyToOrderImage from "../../assets/Home/EasyToOrder.webp";
+import EasyToEdit from "../../assets/Home/EasyToEdit.webp";
+import Garantee from "../../assets/Home/Garantee.webp";
 
 const EasyToOrder = () => {
   return (
@@ -12,6 +12,7 @@ const EasyToOrder = () => {
       <div className="md:flex grid justify-center xl:gap-[80px] md:gap-[58px] gap-[40px]">
         <div className="text-center">
           <img
+            loading="lazy"
             src={EasyToOrderImage}
             alt="EasyToOrderImage"
             className="mx-auto xl:mb-[16px] md:mb-[10px] mb-[5px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px] w-[99px] h-[99px]"
@@ -28,6 +29,7 @@ const EasyToOrder = () => {
         </div>
         <div className="text-center">
           <img
+            loading="lazy"
             src={EasyToEdit}
             alt="EasyToEdit"
             className="mx-auto mb-[16px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px] w-[99px] h-[99px]"
@@ -44,6 +46,7 @@ const EasyToOrder = () => {
         </div>
         <div className="text-center">
           <img
+            loading="lazy"
             src={Garantee}
             alt="Garantee"
             className="mx-auto mb-[16px] xl:w-[168px] xl:h-[168px] md:w-[120px] md:h-[120px] w-[99px] h-[99px]"

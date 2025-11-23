@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Israel from "../../assets/Services/Photo/Israel.jpeg";
-import Sixtysix from "../../assets/Services/ShirtPattern/Sixtysix.png";
-import Sleep from "../../assets/Services/Illustration/Sleep.png";
+import Israel from "../../assets/Services/Photo/Israel.webp";
+import Sixtysix from "../../assets/Services/ShirtPattern/Sixtysix.webp";
+import Sleep from "../../assets/Services/Illustration/Sleep.webp";
 
 const SwiperHome2 = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -96,6 +96,7 @@ const SwiperHome2 = () => {
               <div className="relative w-full h-full overflow-hidden shadow-2xl border-0 border-[#1D0F35]">
                 {/* Image */}
                 <img
+                  loading="lazy"
                   src={movie.image}
                   alt={movie.title}
                   className="w-full h-full object-cover"

@@ -2,16 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
-import Easy from "../../assets/Home/Easy.png";
-import Design from "../../assets/Home/Design.png";
-import Production from "../../assets/Home/Production.png";
-import Promotion from "../../assets/Home/Promotion.mp4";
-import PlanetX from "../../assets/Home/PlanetX.mp4";
-import PlanetXMobile from "../../assets/Home/PlanetXMobile.mp4";
-import PromotionMobile from "../../assets/Home/PromotionMobile.mp4";
-import EasyMobile from "../../assets/Home/EasyMobile.png";
-import DesignMobile from "../../assets/Home/DesignMobile.png";
-import ProductionMobile from "../../assets/Home/ProductionMobile.png";
+import Easy from "../../assets/Home/Easy.webp";
+import Design from "../../assets/Home/Design.webp";
+import Production from "../../assets/Home/Production.webp";
+import Promotion from "../../assets/Home/Promotion.webm";
+import PlanetX from "../../assets/Home/PlanetX.webm";
+import PlanetXMobile from "../../assets/Home/PlanetXMobile.webm";
+import PromotionMobile from "../../assets/Home/PromotionMobile.webm";
+import EasyMobile from "../../assets/Home/EasyMobile.webp";
+import DesignMobile from "../../assets/Home/DesignMobile.webp";
+import ProductionMobile from "../../assets/Home/ProductionMobile.webp";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -85,7 +85,7 @@ const SwiperHome = () => {
         navigation={!isMobile}
         modules={[Pagination, Navigation]}
         loop={true}
-        className="w-full xl:h-[543px] md:h-[314.49px]"
+        className="w-full xl:h-auto md:h-auto"
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           startSlideTimer(swiper);
@@ -102,6 +102,7 @@ const SwiperHome = () => {
               </video>
             ) : (
               <img
+                loading="lazy"
                 src={item.src}
                 alt={item.alt}
                 className="w-full object-cover"

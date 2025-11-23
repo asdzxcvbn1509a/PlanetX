@@ -1,8 +1,8 @@
-import SixtySix from "../assets/Services/ShirtPattern/SixtySix.png";
-import Thep from "../assets/Services/ShirtPattern/Thep.png";
-import EightTeen from "../assets/Services/ShirtPattern/EightTeen.png";
-import EightTeen2 from "../assets/Services/ShirtPattern/EightTeen2.png";
-import Thep2 from "../assets/Services/ShirtPattern/Thep2.png";
+import SixtySix from "../assets/Services/ShirtPattern/SixtySix.webp";
+import Thep from "../assets/Services/ShirtPattern/Thep.webp";
+import EightTeen from "../assets/Services/ShirtPattern/EightTeen.webp";
+import EightTeen2 from "../assets/Services/ShirtPattern/EightTeen2.webp";
+import Thep2 from "../assets/Services/ShirtPattern/Thep2.webp";
 
 const ShirtData = [
   {

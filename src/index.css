@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 @layer base {
-    *{
-        font-family: "Kanit", sans-serif;
-    }
+  * {
+    font-family: "Kanit", sans-serif;
+  }
+}
+
+body {
+  overflow-x: hidden;
 }

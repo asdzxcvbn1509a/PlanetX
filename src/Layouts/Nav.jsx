@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavLogo from "../assets/NavLogo.png";
+import NavLogo from "../assets/NavLogo.webp";
 import { Search, Menu, X } from "lucide-react";
 import Switch from "../Component/Switch";
 import { NavLink } from "react-router-dom";
@@ -18,6 +18,7 @@ const Nav = () => {
         <div className="flex items-center h-full max-w-[1500px] justify-between mx-auto">
           <NavLink to="/">
             <img
+              loading="lazy"
               src={NavLogo}
               alt="NavLogo"
               className="w-[174px] h-[23px] cursor-pointer"
@@ -97,6 +98,7 @@ const Nav = () => {
         <div className="flex md:gap-[24px] gap-[10px] items-center">
           <NavLink to="/">
             <img
+              loading="lazy"
               src={NavLogo}
               alt="NavLogo"
               className="md:w-[140px] w-[74px] my-auto"

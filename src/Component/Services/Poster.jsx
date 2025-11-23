@@ -36,7 +36,7 @@ const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
       {filterdSlides.length === 0 ? (
         ""
       ) : (
-        <h1 className="xl:text-xl text-base font-light md:font-normal xl:mt-[13px] md:mt-[9px] mt-[17px] mb-[7px] xl:mb-6 md:mb-[10px]">
+        <h1 className="xl:text-xl text-base font-light md:font-normal xl:mt-[13px] md:mt-[9px] mt-[7px] mb-[7px] xl:mb-6 md:mb-[10px]">
           โปสเตอร์ / ป้ายโฆษณา
         </h1>
       )}
@@ -58,10 +58,12 @@ const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
           <SwiperSlide key={index}>
             {item.type === "image" ? (
               <img
+                loading="lazy"
                 src={item.src}
                 alt={item.alt}
-                className="object-cover border shadow-lg"
-              ></img>
+                className="object-cover border"
+                style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+              />
             ) : (
               <video></video>
             )}
@@ -76,6 +78,7 @@ const Poster = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
             to="/services/poster"
             style={{
               background: "linear-gradient(180deg, #533F85 40%, #30008C 80%)",
+              boxShadow: "rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px",
             }}
             className="xl:text-base text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] px-[7px] py-[6px] rounded-md cursor-pointer font-light md:font-normal"
           >

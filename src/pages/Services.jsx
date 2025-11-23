@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { Funnel } from "lucide-react";
-import Type from "../Component/Services/Type";
-import Style from "../Component/Services/Style";
-import Purpose from "../Component/Services/Purpose";
-import Period from "../Component/Services/Period";
-import TreeD from "../Component/Services/TreeD";
-import Logo from "../Component/Services/Logo";
-import Illustration from "../Component/Services/Illustration";
-import Poster from "../Component/Services/Poster";
-import Character from "../Component/Services/Character";
-import ShirtPattern from "../Component/Services/ShirtPattern";
-import Motion from "../Component/Services/Motion";
-import Photo from "../Component/Services/Photo";
-import TypeMobile from "../Component/Services/TypeMobile";
-import StyleMobile from "../Component/Services/StyleMobile";
-import PurposeMobile from "../Component/Services/PurposeMobile";
-import PeriodMobile from "../Component/Services/PeriodMobile";
+import Type from "../component/Services/Type";
+import Style from "../component/Services/Style";
+import Purpose from "../component/Services/Purpose";
+import Period from "../component/Services/Period";
+import TreeD from "../component/Services/TreeD";
+import Logo from "../component/Services/Logo";
+import Illustration from "../component/Services/Illustration";
+import Poster from "../component/Services/Poster";
+import Character from "../component/Services/Character";
+import ShirtPattern from "../component/Services/ShirtPattern";
+import Motion from "../component/Services/Motion";
+import Photo from "../component/Services/Photo";
+import TypeMobile from "../component/Services/TypeMobile";
+import StyleMobile from "../component/Services/StyleMobile";
+import PurposeMobile from "../component/Services/PurposeMobile";
+import PeriodMobile from "../component/Services/PeriodMobile";
 
 const Services = () => {
   const [checkedType, setCheckedType] = useState({
@@ -133,7 +133,13 @@ const Services = () => {
           </div>
 
           {/* Mobile Filter (Mobile Only) */}
-          <div className="bg-[#F3DEFF] pb-[16px] w-full md:w-[235px] xl:hidden mb-6">
+          <div
+            className="bg-[#F3DEFF] pb-[16px] w-full md:w-[235px] xl:hidden mb-6"
+            style={{
+              boxShadow:
+                "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+            }}
+          >
             <h1 className="text-white font-medium md:font-normal xl:text-2xl md:text-xl text-base p-[15px] xl:hidden bg-[#391F79] rounded-md">
               ค้นหาแบบละเอียด
             </h1>

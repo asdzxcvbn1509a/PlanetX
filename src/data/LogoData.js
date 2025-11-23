@@ -1,14 +1,14 @@
-import Sixty from "../assets/Services/Logo/Sixty.png";
-import Sweet from "../assets/Services/Logo/Sweet.png";
-import Kmutt from "../assets/Services/Logo/Kmutt.png";
-import Night from "../assets/Services/Logo/Night.png";
-import Cheer from "../assets/Services/Logo/Cheer.png";
-import BBQ from "../assets/Services/Logo/BBQ.png";
-import Shell from "../assets/Services/Logo/Shell.png";
-import Sex from "../assets/Services/Logo/Sex.png";
-import Way from "../assets/Services/Logo/Way.png";
-import Diamond from "../assets/Services/Logo/Diamond.png";
-import Modern from "../assets/Services/Logo/Modern.png";
+import Sixty from "../assets/Services/Logo/Sixty.webp";
+import Sweet from "../assets/Services/Logo/Sweet.webp";
+import Kmutt from "../assets/Services/Logo/Kmutt.webp";
+import Night from "../assets/Services/Logo/Night.webp";
+import Cheer from "../assets/Services/Logo/Cheer.webp";
+import BBQ from "../assets/Services/Logo/BBQ.webp";
+import Shell from "../assets/Services/Logo/Shell.webp";
+import Sex from "../assets/Services/Logo/Sex.webp";
+import Way from "../assets/Services/Logo/Way.webp";
+import Diamond from "../assets/Services/Logo/Diamond.webp";
+import Modern from "../assets/Services/Logo/Modern.webp";
 
 const LogoData = [
   {

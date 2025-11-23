@@ -1,14 +1,14 @@
-import Israel from "../assets/Services/Photo/Israel.jpeg";
-import Food1 from "../assets/Services/Photo/Food1.jpg";
-import Food2 from "../assets/Services/Photo/Food2.jpg";
-import Food3 from "../assets/Services/Photo/Food3.jpg";
-import Food4 from "../assets/Services/Photo/Food4.jpg";
-import Food5 from "../assets/Services/Photo/Food5.jpg";
-import Food6 from "../assets/Services/Photo/Food6.jpg";
-import Food7 from "../assets/Services/Photo/Food7.jpg";
-import Food8 from "../assets/Services/Photo/Food8.jpg";
-import Food9 from "../assets/Services/Photo/Food9.jpg";
-import Food10 from "../assets/Services/Photo/Food10.jpg";
+import Israel from "../assets/Services/Photo/Israel.webp";
+import Food1 from "../assets/Services/Photo/Food1.webp";
+import Food2 from "../assets/Services/Photo/Food2.webp";
+import Food3 from "../assets/Services/Photo/Food3.webp";
+import Food4 from "../assets/Services/Photo/Food4.webp";
+import Food5 from "../assets/Services/Photo/Food5.webp";
+import Food6 from "../assets/Services/Photo/Food6.webp";
+import Food7 from "../assets/Services/Photo/Food7.webp";
+import Food8 from "../assets/Services/Photo/Food8.webp";
+import Food9 from "../assets/Services/Photo/Food9.webp";
+import Food10 from "../assets/Services/Photo/Food10.webp";
 
 const PhotoData = [
   {
