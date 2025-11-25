@@ -17,8 +17,13 @@ import TypeMobile from "../component/Services/TypeMobile";
 import StyleMobile from "../component/Services/StyleMobile";
 import PurposeMobile from "../component/Services/PurposeMobile";
 import PeriodMobile from "../component/Services/PeriodMobile";
+import { useLocation } from "react-router-dom";
 
 const Services = () => {
+  const { search } = useLocation();
+  const searchParams = new URLSearchParams(search);
+  const searchText = searchParams.get("search")?.toLowerCase() || "";
+
   const [checkedType, setCheckedType] = useState({
     treeD: false,
     logo: false,
@@ -80,6 +85,7 @@ const Services = () => {
     }));
   };
 
+  const match = (text) => text.toLowerCase().includes(searchText);
   const isAnyChecked = Object.values(checkedType).some((v) => v);
 
   return (
@@ -172,67 +178,79 @@ const Services = () => {
               </h1>
               <hr className="text-[#303030] md:w-[542px] xl:w-full" />
 
-              {(!isAnyChecked || checkedType.treeD) && (
+              {(!isAnyChecked || checkedType.treeD) && match("3d") && (
                 <TreeD
                   checkedStyle={checkedStyle}
                   checkedPurpose={checkedPurpose}
                   checkedPeriod={checkedPeriod}
                 />
               )}
-              {(!isAnyChecked || checkedType.logo) && (
-                <Logo
-                  checkedStyle={checkedStyle}
-                  checkedPurpose={checkedPurpose}
-                  checkedPeriod={checkedPeriod}
-                />
-              )}
-              {(!isAnyChecked || checkedType.illustration) && (
-                <Illustration
-                  checkedStyle={checkedStyle}
-                  checkedPurpose={checkedPurpose}
-                  checkedPeriod={checkedPeriod}
-                />
-              )}
-              {(!isAnyChecked || checkedType.poster) && (
-                <Poster
-                  checkedStyle={checkedStyle}
-                  checkedPurpose={checkedPurpose}
-                  checkedPeriod={checkedPeriod}
-                />
-              )}
-              {(!isAnyChecked || checkedType.character) && (
-                <Character
-                  checkedStyle={checkedStyle}
-                  checkedPurpose={checkedPurpose}
-                  checkedPeriod={checkedPeriod}
-                />
-              )}
-              {(!isAnyChecked || checkedType.shirt) && (
-                <ShirtPattern
-                  checkedStyle={checkedStyle}
-                  checkedPurpose={checkedPurpose}
-                  checkedPeriod={checkedPeriod}
-                />
-              )}
+              {((!isAnyChecked || checkedType.logo) && match("โลโก้")) ||
+                (match("logo") && (
+                  <Logo
+                    checkedStyle={checkedStyle}
+                    checkedPurpose={checkedPurpose}
+                    checkedPeriod={checkedPeriod}
+                  />
+                ))}
+              {((!isAnyChecked || checkedType.illustration) &&
+                match("ภาพประกอบ")) ||
+                (match("illustration") && (
+                  <Illustration
+                    checkedStyle={checkedStyle}
+                    checkedPurpose={checkedPurpose}
+                    checkedPeriod={checkedPeriod}
+                  />
+                ))}
+              {(!isAnyChecked || checkedType.poster) &&
+                match("โปสเตอร์ / ป้ายโฆษณา") && (
+                  <Poster
+                    checkedStyle={checkedStyle}
+                    checkedPurpose={checkedPurpose}
+                    checkedPeriod={checkedPeriod}
+                  />
+                )}
+              {((!isAnyChecked || checkedType.character) &&
+                match("ออกแบบตัวละคร")) ||
+                (match("character") && (
+                  <Character
+                    checkedStyle={checkedStyle}
+                    checkedPurpose={checkedPurpose}
+                    checkedPeriod={checkedPeriod}
+                  />
+                ))}
+              {((!isAnyChecked || checkedType.shirt) &&
+                match("ออกแบบลายเสื้อ")) ||
+                (match("shirtPattern") && (
+                  <ShirtPattern
+                    checkedStyle={checkedStyle}
+                    checkedPurpose={checkedPurpose}
+                    checkedPeriod={checkedPeriod}
+                  />
+                ))}
 
               <h1 className="xl:text-[32px] text-xl text-[#493678] font-semibold xl:mb-2 md:mb-[16px] mb-[11px]">
                 โปรดักชั่น
               </h1>
               <hr className="text-[#303030] md:w-[542px] xl:w-full" />
-              {(!isAnyChecked || checkedType.motion) && (
-                <Motion
-                  checkedStyle={checkedStyle}
-                  checkedPurpose={checkedPurpose}
-                  checkedPeriod={checkedPeriod}
-                />
-              )}
-              {(!isAnyChecked || checkedType.photo) && (
-                <Photo
-                  checkedStyle={checkedStyle}
-                  checkedPurpose={checkedPurpose}
-                  checkedPeriod={checkedPeriod}
-                />
-              )}
+              {((!isAnyChecked || checkedType.motion) &&
+                match("โมชั่นกราฟิก")) ||
+                (match("Motion") && (
+                  <Motion
+                    checkedStyle={checkedStyle}
+                    checkedPurpose={checkedPurpose}
+                    checkedPeriod={checkedPeriod}
+                  />
+                ))}
+              {((!isAnyChecked || checkedType.photo) &&
+                match("ถ่ายภาพ / วิดีโอ")) ||
+                (match("Photo") && (
+                  <Photo
+                    checkedStyle={checkedStyle}
+                    checkedPurpose={checkedPurpose}
+                    checkedPeriod={checkedPeriod}
+                  />
+                ))}
             </div>
 
             <Outlet />

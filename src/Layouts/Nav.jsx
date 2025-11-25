@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import NavLogo from "../assets/NavLogo.webp";
 import { Search, Menu, X } from "lucide-react";
 import Switch from "../Component/Switch";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Nav = () => {
+  const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate();
+  const handleSearch = () => {
+    navigate(`/services?search=${searchText}`);
+    setShowSearch(false);
+  };
+
+  const [showSearch, setShowSearch] = useState(false);
+
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -67,11 +76,17 @@ const Nav = () => {
             </NavLink>
             <div className="flex my-auto">
               <input
+                aria-label
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleSearch();
+                }}
                 type="text"
                 placeholder="ค้นหา"
                 className="bg-white w-[238.71px] text-base pl-[15px] h-10 outline-none"
               />
-              <button>
+              <button onClick={handleSearch}>
                 <Search className="text-white bg-[#905BF4] w-10 h-10 p-2 cursor-pointer" />
               </button>
             </div>
@@ -104,11 +119,28 @@ const Nav = () => {
               className="md:w-[140px] w-[74px] my-auto"
             />
           </NavLink>
-          <Search
-            size={25}
-            strokeWidth={2}
-            className="bg-[#905BF4] p-[5px] text-white rounded-[3px]"
-          />
+          <button onClick={() => setShowSearch(!showSearch)}>
+            <Search
+              size={25}
+              strokeWidth={2}
+              className="bg-[#905BF4] p-[5px] text-white rounded-[3px]"
+            />
+          </button>
+          {showSearch && (
+            <div className="absolute top-18 left-0 bg-white w-full h-[100vh]">
+              <input
+                onChange={(e) => setSearchText(e.target.value)}
+                value={searchText}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleSearch();
+                }}
+                aria-label
+                placeholder="ค้าหา"
+                type="text"
+                className="w-full p-2 md:p-4 border text-base md:text-xl"
+              />
+            </div>
+          )}
           <button className="text-white">English</button>
         </div>
       </div>
