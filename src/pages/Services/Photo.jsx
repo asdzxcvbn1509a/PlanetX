@@ -4,7 +4,7 @@ import PhotoData from "../../data/PhotoData";
 
 const Photo = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-[url(BackgroundIMG.webp)] bg-cover bg-center">
       <div className="xl:mt-[88px] mt-[72px]">
         <div className="flex md:mb-[32px] mb-[16px] xl:mt-[16px] md:mt-[12px] mt-[16px]">
           <NavLink

@@ -90,7 +90,7 @@ const Services = () => {
 
   return (
     // 1. เอา div เปล่าออก ให้เหลือแค่ flex justify-center ของ Wrapper นอกสุด
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-[url(/BackgroundIMG.webp)] bg-cover bg-center">
       {/* 2. ตัวนี้ต้องมี w-full เพื่อคุมไม่ให้ Swiper ดัน layout มือถือพัง */}
       <div className="xl:pt-[88px] pt-[72px] w-full md:w-[794px] xl:w-[1440px] px-4 xl:px-0">
         <div className="flex md:mb-[32px] mb-[24px] xl:mt-[16px] md:mt-[12px] mt-[16px]">
@@ -178,79 +178,75 @@ const Services = () => {
               </h1>
               <hr className="text-[#303030] md:w-[542px] xl:w-full" />
 
-              {(!isAnyChecked || checkedType.treeD) && match("3d") && (
-                <TreeD
-                  checkedStyle={checkedStyle}
-                  checkedPurpose={checkedPurpose}
-                  checkedPeriod={checkedPeriod}
-                />
-              )}
-              {((!isAnyChecked || checkedType.logo) && match("โลโก้")) ||
-                (match("logo") && (
+              {(!isAnyChecked || checkedType.treeD) &&
+                (match("3d") || match("3มิติ")) && (
+                  <TreeD
+                    checkedStyle={checkedStyle}
+                    checkedPurpose={checkedPurpose}
+                    checkedPeriod={checkedPeriod}
+                  />
+                )}
+              {(!isAnyChecked || checkedType.logo) &&
+                (match("logo") || match("โลโก้")) && (
                   <Logo
                     checkedStyle={checkedStyle}
                     checkedPurpose={checkedPurpose}
                     checkedPeriod={checkedPeriod}
                   />
-                ))}
-              {((!isAnyChecked || checkedType.illustration) &&
-                match("ภาพประกอบ")) ||
-                (match("illustration") && (
+                )}
+              {(!isAnyChecked || checkedType.illustration) &&
+                (match("illustration") || match("ภาพประกอบ")) && (
                   <Illustration
                     checkedStyle={checkedStyle}
                     checkedPurpose={checkedPurpose}
                     checkedPeriod={checkedPeriod}
                   />
-                ))}
+                )}
               {(!isAnyChecked || checkedType.poster) &&
-                match("โปสเตอร์ / ป้ายโฆษณา") && (
+                (match("poster") || match("โปสเตอร์ / ป้ายโฆษณา")) && (
                   <Poster
                     checkedStyle={checkedStyle}
                     checkedPurpose={checkedPurpose}
                     checkedPeriod={checkedPeriod}
                   />
                 )}
-              {((!isAnyChecked || checkedType.character) &&
-                match("ออกแบบตัวละคร")) ||
-                (match("character") && (
+              {(!isAnyChecked || checkedType.character) &&
+                (match("character") || match("ออกแบบตัวละคร")) && (
                   <Character
                     checkedStyle={checkedStyle}
                     checkedPurpose={checkedPurpose}
                     checkedPeriod={checkedPeriod}
                   />
-                ))}
-              {((!isAnyChecked || checkedType.shirt) &&
-                match("ออกแบบลายเสื้อ")) ||
-                (match("shirtPattern") && (
+                )}
+              {(!isAnyChecked || checkedType.shirt) &&
+                (match("shirtPattern") || match("ออกแบบลายเสื้อ")) && (
                   <ShirtPattern
                     checkedStyle={checkedStyle}
                     checkedPurpose={checkedPurpose}
                     checkedPeriod={checkedPeriod}
                   />
-                ))}
+                )}
 
               <h1 className="xl:text-[32px] text-xl text-[#493678] font-semibold xl:mb-2 md:mb-[16px] mb-[11px]">
                 โปรดักชั่น
               </h1>
               <hr className="text-[#303030] md:w-[542px] xl:w-full" />
-              {((!isAnyChecked || checkedType.motion) &&
-                match("โมชั่นกราฟิก")) ||
-                (match("Motion") && (
+              {(!isAnyChecked || checkedType.motion) &&
+                (match("motion") || match("โมชั่นกราฟฟิก")) && (
                   <Motion
                     checkedStyle={checkedStyle}
                     checkedPurpose={checkedPurpose}
                     checkedPeriod={checkedPeriod}
                   />
-                ))}
-              {((!isAnyChecked || checkedType.photo) &&
-                match("ถ่ายภาพ / วิดีโอ")) ||
-                (match("Photo") && (
+                )}
+              {(!isAnyChecked || checkedType.photo) &&
+                (match("photo") || match("ถ่ายภาพ / วิดีโอ")) && (
                   <Photo
                     checkedStyle={checkedStyle}
                     checkedPurpose={checkedPurpose}
                     checkedPeriod={checkedPeriod}
                   />
-                ))}
+                )}
             </div>
 
             <Outlet />

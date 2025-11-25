@@ -4,7 +4,7 @@ import ThreeDData from "../../data/ThreeDData";
 
 const ThreeD = () => {
   return (
-    <div className="flex justify-center pb-[150px]">
+    <div className="flex justify-center pb-[150px] bg-[url(BackgroundIMG.webp)] bg-center bg-cover">
       <div className="xl:mt-[88px] mt-[72px]">
         <div className="flex md:mb-[32px] xl:mt-[16px] md:mt-[12px] my-[16px]">
           <NavLink

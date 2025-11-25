@@ -4,7 +4,7 @@ import ShirtData from "../../data/ShirtData";
 
 const ShirtPatternDesign = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-[url(BackgroundIMG.webp)] bg-cover bg-center">
       <div className="xl:mt-[88px] mt-[72px]">
         <div className="flex md:mb-[32px] xl:mt-[16px] md:mt-[12px] my-[16px]">
           <NavLink
