@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import WeHappy from "../Component/Contact/WeHappy";
+import SendUs from "../Component/Contact/SendUs";
 
 const Contact = () => {
   return (
-    <div className='pt-[88px]'>Contact</div>
-  )
-}
+    <div className="xl:pt-[88px] pt-[72px] xl:flex xl:gap-[80px] xl:justify-center bg-green-800">
+      <WeHappy/>
+      <SendUs/>
+    </div>
+  );
+};
 
-export default Contact
+export default Contact;
