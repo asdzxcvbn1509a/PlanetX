@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+import { useTranslation } from "react-i18next";
+
 const Type = ({ checkedPeriod, onChange }) => {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(true);
   const period = [
-    ["threeDay", "3 วัน"],
-    ["oneWeek", "1 สัปดาห์"],
-    ["twoWeek", "2 สัปดาห์"],
-    ["moreThanTwoWeek", "มากกว่า 2 สัปดาห์"],
+    ["threeDay", t("3day")],
+    ["oneWeek", t("1week")],
+    ["twoWeek", t("2week")],
+    ["moreThanTwoWeek", t("more-than-two-week")],
   ];
 
   return (
@@ -23,7 +27,7 @@ const Type = ({ checkedPeriod, onChange }) => {
         className="flex justify-between bg-[#391F79] w-[229px] h-[39px] text-left cursor-pointer rounded-md border"
       >
         <h1 className="text-xl font-medium text-white my-auto pl-[12px]">
-          ระยะเวลา
+          {t("period")}
         </h1>
         {isOpen ? (
           <ChevronUp size={32} className="text-white my-auto pr-[12px]" />

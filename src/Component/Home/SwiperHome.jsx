@@ -22,24 +22,19 @@ const SwiperHome = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const swiperData = [
-    { type: "video", src: PlanetX, alt: "PlanetX" },
-    { type: "video", src: Promotion, alt: "Promotion" },
+    { type: "video", src: PlanetX, alt: "PlanetX", duration: 10000 },
+    { type: "video", src: Promotion, alt: "Promotion", duration: 10000 },
     { type: "image", src: Easy, alt: "Easy", duration: 5000 },
     { type: "image", src: Design, alt: "Design", duration: 5000 },
     { type: "image", src: Production, alt: "Production", duration: 5000 },
   ];
 
   const swiperDataMobile = [
-    { type: "video", src: PlanetXMobile, alt: "PlanetXMobile" },
-    { type: "video", src: PromotionMobile, alt: "PromotionMobile" },
+    { type: "video", src: PlanetXMobile, alt: "PlanetXMobile", duration: 10000 },
+    { type: "video", src: PromotionMobile, alt: "PromotionMobile", duration: 10000 },
     { type: "image", src: EasyMobile, alt: "EasyMobile", duration: 5000 },
     { type: "image", src: DesignMobile, alt: "DesignMobile", duration: 5000 },
-    {
-      type: "image",
-      src: ProductionMobile,
-      alt: "ProductionMobile",
-      duration: 5000,
-    },
+    { type: "image", src: ProductionMobile, alt: "ProductionMobile", duration: 5000 },
   ];
 
   const dataToUse = isMobile ? swiperDataMobile : swiperData;
@@ -56,26 +51,12 @@ const SwiperHome = () => {
     const currentSlide = dataToUse[swiper.realIndex];
     const video = document.querySelectorAll("video")[swiper.realIndex];
 
-    if (currentSlide.type === "video" && video) {
+    if (video) {
       video.currentTime = 0;
       video.play();
-      video.onended = () => swiper.slideNext();
-    } else {
-      setTimeout(() => swiper.slideNext(), currentSlide.duration);
     }
-  };
 
-  const startSlideTimerMobile = (swiper) => {
-    const currentSlide = swiperDataMobile[swiper.realIndex];
-    const video = document.querySelectorAll("video")[swiper.realIndex];
-
-    if (currentSlide.type === "video" && video) {
-      video.currentTime = 0;
-      video.play();
-      video.onended = () => swiper.slideNext();
-    } else {
-      setTimeout(() => swiper.slideNext(), currentSlide.duration);
-    }
+    setTimeout(() => swiper.slideNext(), currentSlide.duration);
   };
 
   return (
@@ -128,18 +109,16 @@ const SwiperHome = () => {
           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         }
 
-        .swiper-button-prev {
-        left:22px !important;}
+        .swiper-button-prev { left:22px !important; }
 
         .swiper-button-next::after,
         .swiper-button-prev::after {
-          font-size: 22px; /* ขนาดลูกศร */
+          font-size: 22px;
         }
 
         .swiper-pagination-bullet-active {
           background-color: #303030 !important;
         }
-        
       `}</style>
     </div>
   );

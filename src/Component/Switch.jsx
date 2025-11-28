@@ -1,36 +1,38 @@
-import React, { useState } from 'react'
+import React from "react";
 
-const Switcher = () => {
-  const [isChecked, setIsChecked] = useState(false)
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked)
-  }
-
+const Switch = ({ isChecked, handleCheckboxChange }) => {
   return (
     <>
-      <label className='flex cursor-pointer select-none items-center'>
-        <div className='relative'>
+      <label className="flex cursor-pointer select-none items-center">
+        <div className="relative">
           <input
-            type='checkbox'
+            type="checkbox"
             checked={isChecked}
             onChange={handleCheckboxChange}
-            className='sr-only'
+            className="sr-only"
           />
           <div
-            className={`box block h-8 w-14 rounded-full ${
-              isChecked ? 'bg-red-500' : 'bg-green-500'
+            style={{
+              background:
+                "linear-gradient(360deg, #ffffff60 0%, #ffffff07 100%)",
+            }}
+            className={`box block h-9 w-[100px] rounded-full text-white text-xs  ${
+              isChecked ? "pt-2.5 pl-4" : "pt-2.5 pl-13"
             }`}
-          ></div>
+          >
+            {isChecked ? "Thai" : "English"}
+          </div>
           <div
-            className={`absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition ${
-              isChecked ? 'translate-x-full' : ''
+            className={`absolute left-2 top-1.5 flex h-[24px] w-[38px] items-center justify-center rounded-full bg-cover outline-2 outline-white transition ${
+              isChecked
+                ? "translate-x-[45px] bg-[url('/ThaiFlag.svg')]"
+                : "bg-[url('/AmericaFlag.png')]"
             }`}
           ></div>
         </div>
       </label>
     </>
-  )
-}
+  );
+};
 
-export default Switcher
+export default Switch;

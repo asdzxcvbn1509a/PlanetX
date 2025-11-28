@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className="xl:text-center bg-[#3B2862] md:pl-[24px] pl-[20px] pt-[20px] xl:pl-0 md:pt-0">
@@ -14,7 +17,7 @@ const Footer = () => {
               Planet x Media Studio '
             </p>
             <p className="xl:text-xl text-[11px] font-light text-white">
-              สำหรับทุกความต้องการของคุณ'
+              {t("for-all")}'
             </p>
           </div>
         </div>
@@ -24,25 +27,25 @@ const Footer = () => {
           className="xl:flex xl:justify-around md:gap-[24px] gap-[20px] max-w-[700px] xl:mx-auto xl:py-6 md:pb-[12px] md:pt-[26px] grid pb-[20px]"
         >
           <NavLink to="/" className="xl:text-xl text-sm font-light text-white">
-            หน้าหลัก
+            {t("home")}
           </NavLink>
           <NavLink
             to="/services"
             className="xl:text-xl text-sm font-light text-white"
           >
-            บริการ
+            {t("services")}
           </NavLink>
           <NavLink
             to="/about-us"
             className="xl:text-xl text-sm font-light text-white"
           >
-            เกี่ยวกับเรา
+            {t("about-us")}
           </NavLink>
           <NavLink
             to="/contact"
             className="xl:text-xl text-sm font-light text-white"
           >
-            ติดต่อ
+            {t("contact")}
           </NavLink>
         </div>
       </div>

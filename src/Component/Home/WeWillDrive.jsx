@@ -2,7 +2,10 @@ import React from "react";
 import SaturdayLeft from "../../assets/Home/SaturdayLeft.webp";
 import SaturdayRight from "../../assets/Home/SaturdayRight.webp";
 
+import { useTranslation } from "react-i18next";
+
 const WeWillDrive = () => {
+  const { t } = useTranslation();
   return (
     <div
       className="text-center bg-[#FAF2FB] xl:py-[44px] md:py-[53px] py-[16px] relative w-full overflow-x-hidden"
@@ -12,22 +15,21 @@ const WeWillDrive = () => {
       }}
     >
       <h1 className="xl:text-4xl md:text-lg text-xs xl:mb-[24px] md:mb-[12px] hidden md:block">
-        “ เราจะขับเคลื่อนสื่อแห่งอนาคต
-        ด้วยพลังแห่งความคิดสร้างสรรค์ที่ไร้ขีดจำกัด “
+        {t("we-will")}
       </h1>
       <h1 className="xl:text-4xl md:text-lg text-xs xl:mb-[24px] md:mb-[12px] mb-[13px] md:hidden">
-        “ เราจะขับเคลื่อนสื่อแห่งอนาคต
+        {t("we-will-mobile-1")}
         <br />
-        ด้วยพลังแห่งความคิดสร้างสรรค์ที่ไร้ขีดจำกัด “
+        {t("we-will-mobile-2")}
       </h1>
       <p className="xl:text-[22px] md:text-base text-[10px]">
-        ที่ Planet X เรามุ่งสร้างประสบการณ์ด้านมัลติมีเดีย
+        {t("at-planet")}
         <br />
-        ด้วยพลังแห่งความคิดสร้างสรรค์
+        {t("with-the")}
         <br />
-        เพื่อให้ทุกสื่อที่เราสร้างไม่เพียงทันต่อโลก
+        {t("to-ensure-that")}
         <br />
-        แต่เป็นแรงขับเคลื่อนที่ก้าวนำโลกที่มีการเปลี่ยนแปลงอยู่เสมอ
+        {t("but-it")}
         <br />
       </p>
       <h2 className="text-[24px] mt-[24px] hidden xl:block">Planet x</h2>

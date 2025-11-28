@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+import { useTranslation } from "react-i18next";
+
 const Type = ({ checkedType, onChange }) => {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -17,7 +21,7 @@ const Type = ({ checkedType, onChange }) => {
         className="flex justify-between bg-[#391F79] w-[229px] h-[39px] text-left cursor-pointer rounded-md border"
       >
         <h1 className="text-xl font-medium text-white my-auto pl-[12px]">
-          ประเภท
+          {t("type")}
         </h1>
         {isOpen ? (
           <ChevronUp size={32} className="text-white my-auto pr-[12px]" />
@@ -35,15 +39,15 @@ const Type = ({ checkedType, onChange }) => {
           className="w-[229px] rounded-b-lg"
         >
           <div className="grid gap-[10px] pt-[12px] pl-[12px] pb-[12px]">
-            <h1 className="text-base text-[#303030]">ออกแบบ</h1>
+            <h1 className="text-base text-[#303030]">{t("design")}</h1>
 
             {[
-              ["treeD", "3D"],
-              ["logo", "โลโก้"],
-              ["illustration", "ภาพประกอบ"],
-              ["poster", "โปสเตอร์ / ป้ายโฆษณา"],
-              ["character", "ออกแบบตัวละคร"],
-              ["shirt", "ออกแบบลายเสื้อ"],
+              ["treeD", t("3d")],
+              ["logo", t("logo")],
+              ["illustration", t("illustration")],
+              ["poster", t("poster")],
+              ["character", t("character")],
+              ["shirt", t("shirt")],
             ].map(([key, label]) => (
               <label
                 key={key}
@@ -59,11 +63,11 @@ const Type = ({ checkedType, onChange }) => {
               </label>
             ))}
 
-            <h1 className="text-base text-[#303030]">โปรดักชั่น</h1>
+            <h1 className="text-base text-[#303030]">{t("production")}</h1>
 
             {[
-              ["motion", "โมชั่นกราฟิก"],
-              ["photo", "ถ่ายภาพ / วิดีโอ"],
+              ["motion", t("motion-graphic")],
+              ["photo", t("photo-video")],
             ].map(([key, label]) => (
               <label
                 key={key}

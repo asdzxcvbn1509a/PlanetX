@@ -3,7 +3,10 @@ import Israel from "../../assets/Services/Photo/Israel.webp";
 import Sixtysix from "../../assets/Services/ShirtPattern/Sixtysix.webp";
 import Sleep from "../../assets/Services/Illustration/Sleep.webp";
 
+import { useTranslation } from "react-i18next";
+
 const SwiperHome2 = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const movies = [
@@ -77,7 +80,7 @@ const SwiperHome2 = () => {
   return (
     <div className="bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-900 xl:p-4 overflow-hidden">
       <h1 className="xl:text-[32px] text-xl text-white text-center xl:pt-[48px] md:pt-[51px] pt-[29px] md:-mb-10 -mb-25 xl:-mb-0">
-        บริการยอดนิยม
+        {t("popular")}
       </h1>
       <div className="w-full max-w-7xl relative mx-auto">
         {/* Swiper Container */}

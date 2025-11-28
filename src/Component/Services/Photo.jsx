@@ -7,7 +7,11 @@ import { Pagination, Navigation } from "swiper/modules";
 import { NavLink } from "react-router-dom";
 import PhotoData from "../../data/PhotoData";
 
+import { useTranslation } from "react-i18next";
+
 const Photo = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
+  const { t } = useTranslation();
+
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
@@ -36,7 +40,7 @@ const Photo = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
         ""
       ) : (
         <h1 className="xl:text-xl text-base font-light md:font-normal xl:mt-[13px] md:mt-[9px] mt-[17px] mb-[7px] xl:mb-6 md:mb-[10px]">
-          ถ่ายภาพ / วีดีโอ
+          {t("photo-video")}
         </h1>
       )}
 
@@ -60,7 +64,7 @@ const Photo = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
                 loading="lazy"
                 src={item.src}
                 alt={item.alt}
-                className="w-full xl:h-56 md:h-40 h-[200px] object-cover border object-[50%_60%]"
+                className="w-full xl:h-52 md:h-40 h-[200px] object-cover border object-[50%_60%]"
                 style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
               />
             ) : (
@@ -87,7 +91,7 @@ const Photo = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
             }}
             className="xl:text-base text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] px-[7px] py-[6px] rounded-md cursor-pointer font-light md:font-normal"
           >
-            ดูเพิ่มเติม
+            {t("view-more")}
           </NavLink>
         </div>
       )}

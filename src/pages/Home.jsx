@@ -8,7 +8,7 @@ import WeWillDrive from "../Component/Home/WeWillDrive";
 
 const Home = () => {
   return (
-    <div className="xl:pt-[88px] pt-[72px]">
+    <div className="xl:pt-[88px] pt-[72px] xl:pb-[96px] md:pb-[43px] pb-[64px]">
       <SwiperHome />
       <OurCompany />
       <WeReady />

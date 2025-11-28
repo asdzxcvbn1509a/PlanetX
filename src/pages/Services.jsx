@@ -18,8 +18,11 @@ import StyleMobile from "../component/Services/StyleMobile";
 import PurposeMobile from "../component/Services/PurposeMobile";
 import PeriodMobile from "../component/Services/PeriodMobile";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
+
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
   const searchText = searchParams.get("search")?.toLowerCase() || "";
@@ -90,7 +93,7 @@ const Services = () => {
 
   return (
     // 1. เอา div เปล่าออก ให้เหลือแค่ flex justify-center ของ Wrapper นอกสุด
-    <div className="flex justify-center bg-[url(/BackgroundIMG.webp)] bg-cover bg-center">
+    <div className="flex justify-center bg-[url(/BackgroundIMG.webp)] bg-cover bg-center xl:pb-[96px] md:pb-[43px] pb-[64px]">
       {/* 2. ตัวนี้ต้องมี w-full เพื่อคุมไม่ให้ Swiper ดัน layout มือถือพัง */}
       <div className="xl:pt-[88px] pt-[72px] w-full md:w-[794px] xl:w-[1440px] px-4 xl:px-0">
         <div className="flex md:mb-[32px] mb-[24px] xl:mt-[16px] md:mt-[12px] mt-[16px]">
@@ -98,7 +101,7 @@ const Services = () => {
             to="/"
             className="text-[#888888] xl:text-xl md:text-base text-sm"
           >
-            หน้าหลัก
+            {t("home")}
           </NavLink>
           <h1 className="text-[#888888] xl:text-xl md:text-base text-sm">
             &nbsp; &gt; &nbsp;
@@ -107,7 +110,7 @@ const Services = () => {
             to="/services"
             className="text-[#303030] xl:text-xl md:text-base text-sm"
           >
-            บริการ
+            {t("services")}
           </NavLink>
         </div>
 
@@ -118,7 +121,7 @@ const Services = () => {
             className="text-[#312070] hidden xl:block"
           />
           <h1 className="text-[#303030] xl:text-2xl md:text-xl hidden xl:block">
-            ค้นหาแบบละเอียด
+            {t("detailed")}
           </h1>
         </div>
 
@@ -147,7 +150,7 @@ const Services = () => {
             }}
           >
             <h1 className="text-white font-medium md:font-normal xl:text-2xl md:text-xl text-base p-[15px] xl:hidden bg-[#391F79] rounded-md">
-              ค้นหาแบบละเอียด
+              {t("detailed")}
             </h1>
             <div className="xl:hidden px-[15px] grid gap-[24px] md:gap-0 justify-center">
               <TypeMobile
@@ -174,7 +177,7 @@ const Services = () => {
           <div className="flex-1 w-full min-w-0 md:max-w-[542px] xl:max-w-full">
             <div className="xl:-mt-14">
               <h1 className="xl:text-[32px] text-xl text-[#493678] font-semibold xl:mb-2 md:mb-[16px] mb-[11px]">
-                ออกแบบ
+                {t("design")}
               </h1>
               <hr className="text-[#303030] md:w-[542px] xl:w-full" />
 
@@ -228,7 +231,7 @@ const Services = () => {
                 )}
 
               <h1 className="xl:text-[32px] text-xl text-[#493678] font-semibold xl:mb-2 md:mb-[16px] mb-[11px]">
-                โปรดักชั่น
+                {t("production")}
               </h1>
               <hr className="text-[#303030] md:w-[542px] xl:w-full" />
               {(!isAnyChecked || checkedType.motion) &&

@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+import { useTranslation } from "react-i18next";
+
 const Style = ({ checkedStyle, onChange }) => {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(true);
 
   const style = [
-    ["minimal", "มินิมอล"],
-    ["cartoon", "การ์ตูน"],
-    ["pixelArt", "พิกเซลอาร์ต"],
+    ["minimal", t("minimal")],
+    ["cartoon", t("cartoon")],
+    ["pixelArt", t("pixel")],
   ];
 
   return (
@@ -23,7 +27,7 @@ const Style = ({ checkedStyle, onChange }) => {
         className="flex justify-between bg-[#391F79] w-[229px] h-[39px] text-left cursor-pointer rounded-md border"
       >
         <h1 className="text-xl font-medium text-white my-auto pl-[12px]">
-          สไตล์
+          {t("style")}
         </h1>
         {isOpen ? (
           <ChevronUp size={32} className="text-white my-auto pr-[12px]" />

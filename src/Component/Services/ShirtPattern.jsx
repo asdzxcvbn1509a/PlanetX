@@ -7,7 +7,11 @@ import { Pagination, Navigation } from "swiper/modules";
 import { NavLink } from "react-router-dom";
 import ShirtData from "../../data/ShirtData";
 
+import { useTranslation } from "react-i18next";
+
 const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
+  const { t } = useTranslation();
+
   const stylesSelected = Object.keys(checkedStyle).filter(
     (key) => checkedStyle[key]
   );
@@ -36,7 +40,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
         ""
       ) : (
         <h1 className="xl:text-xl text-base font-light md:font-normal xl:mt-[13px] mt-[17px] md:mt-[9px] mb-[7px] xl:mb-6 md:mb-[10px]">
-          ออกแบบลายเสื้อ
+          {t("shirt")}
         </h1>
       )}
 
@@ -81,7 +85,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
             }}
             className="xl:text-base text-xs text-white border border-white xl:py-1 xl:px-[21px] md:px-[9px] md:py-[6px] px-[7px] py-[6px] rounded-md cursor-pointer font-light md:font-normal"
           >
-            ดูเพิ่มเติม
+            {t("view-more")}
           </NavLink>
         </div>
       )}
