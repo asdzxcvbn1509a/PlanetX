@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="xl:text-center bg-[#3B2862] md:pl-[24px] pl-[20px] pt-[20px] xl:pl-0 md:pt-0">
         <div className="xl:py-10 md:pt-[24px]">
           <h1 className="xl:text-[40px] text-xl text-white font-medium xl:font-normal md:mb-[10px] mb-[8px] xl:mb-[0px]">
-            Planet x
+            Planet X
           </h1>
           <div className="xl:flex justify-center mb-[20px] md:mb-0">
             <p className="xl:text-xl text-[11px] font-light text-white">
