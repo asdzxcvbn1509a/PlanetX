@@ -1,6 +1,6 @@
 import React from "react";
-import WeHappy from "../component/Contact/WeHappy";
-import SendUs from "../component/Contact/SendUs";
+import WeHappy from "../Component/Contact/WeHappy";
+import SendUs from "../Component/Contact/SendUs";
 
 const Contact = () => {
   return (

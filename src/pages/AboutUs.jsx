@@ -1,7 +1,7 @@
 import React from 'react'
-import Sincerity from '../component/AboutUs/Sincerity'
-import SwiperHome from '../component/Home/SwiperHome'
-import Member from '../component/AboutUs/Member';
+import Sincerity from '../Component/AboutUs/Sincerity'
+import SwiperHome from '../Component/Home/SwiperHome'
+import Member from '../Component/AboutUs/Member';
 
 const AboutUs = () => {
   return (

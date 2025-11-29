@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavLogo from "../assets/NavLogo.webp";
 import { Search, Menu, X } from "lucide-react";
-import Switch from "../component/Switch";
+import Switch from "../Component/Switch";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../i18n";
 import { useTranslation } from "react-i18next";
