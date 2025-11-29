@@ -5,7 +5,7 @@ import Member from '../Component/AboutUs/Member';
 
 const AboutUs = () => {
   return (
-    <div className='xl:pt-[88px] pt-[72px]'>
+    <div className='xl:pt-[88px] pt-[72px] bg-[url("/BackgroundIMG.webp")] bg-cover bg-center'>
     <SwiperHome/>
     <Sincerity/>
     <Member/>

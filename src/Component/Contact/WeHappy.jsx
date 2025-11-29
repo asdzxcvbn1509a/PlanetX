@@ -1,6 +1,9 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 const WeHappy = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div>
@@ -8,14 +11,15 @@ const WeHappy = () => {
           Planet X
         </h1>
         <p className="xl:ml-[88px] font-light xl:text-[20px] text-base ml-[19px]">
-          Planet X เรารู้สึกยินดีเสมอที่ได้ติดต่อกับคุณ
+          Planet X {t("we")}
           <br />
-          ไม่ว่าคุณจะมีคำถาม ต้องการคำแนะนำ
+          {t("whether-you")}
           <br />
-          หรืออยากร่วมงานกับเรา <br />
-          ทีมของเราพร้อมช่วยเหลือ
+          {t("or")}
           <br />
-          และตอบกลับคุณด้วยความใส่ใจ
+          {t("our")}
+          <br />
+          {t("and")}
         </p>
       </div>
     </div>

@@ -7,12 +7,8 @@ import { Type } from "lucide-react";
 
 const Sincerity = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const Photo_PC = [
-    { Type: "image", src: Pc_th, alt: "Pc_th" },
-  ];
-  const Photo_Moblie = [
-    { Type: "image", src: Phone_th, alt: "Phone_th" },
-  ];
+  const Photo_PC = [{ Type: "image", src: Pc_th, alt: "Pc_th" }];
+  const Photo_Moblie = [{ Type: "image", src: Phone_th, alt: "Phone_th" }];
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -23,6 +19,12 @@ const Sincerity = () => {
 
   const dataToUse = isMobile ? Photo_Moblie : Photo_PC;
 
-  return <div>{dataToUse.map((item, index) => (<img id={index} src={item.src} alt={item.alt} className="w-full"/>))}</div>;
+  return (
+    <div>
+      {dataToUse.map((item, index) => (
+        <img id={index} src={item.src} alt={item.alt} className="w-full" />
+      ))}
+    </div>
+  );
 };
 export default Sincerity;
