@@ -23,7 +23,7 @@ const SendUs = () => {
   };
 
   return (
-    <div className="bg-[#FEF9FF] xl:mt-[88px] xl:mr-[88px] xl:mb-[96px]  md:w-auto h-auto rounded-[10px] md:mx-[20px] mb-[54px] mt-[19px] w-auto mx-[20px] ">
+    <div className="bg-[#FEF9FF] xl:mt-[88px] xl:mr-[88px] xl:mb-[96px] md:w-auto h-auto rounded-[10px] md:mx-[20px] mt-[19px] w-auto mx-[20px] ">
       <div className="font-light md:text-[48px] xl:pt-[32px] xl:pl-[57px]  xl:pb-[40px] md:pt-[50px] md:pl-[25px] md:pb-[27px] text-[32px] ml-[11px] pt-[31px]">
         {t("send")}
       </div>

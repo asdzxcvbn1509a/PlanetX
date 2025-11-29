@@ -44,7 +44,7 @@ const Logo = () => {
             {t("logo")}
           </h1>
         </div>
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 xl:gap-[50px] md:gap-[32px] md:max-w-[794px] max-w-[353px] xl:max-w-full">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 xl:gap-[50px] md:gap-[32px] gap-[20px] md:max-w-[794px] max-w-[353px] xl:max-w-full">
           {LogoData.map((item) =>
             item.type === "image" ? (
               <img

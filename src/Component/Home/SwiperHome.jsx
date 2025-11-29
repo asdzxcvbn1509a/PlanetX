@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 import Easy from "../../assets/Home/Easy.webp";
 import Design from "../../assets/Home/Design.webp";
@@ -22,11 +22,11 @@ const SwiperHome = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const swiperData = [
-    { type: "video", src: PlanetX, alt: "PlanetX", duration: 10000 },
-    { type: "video", src: Promotion, alt: "Promotion", duration: 21000 },
-    { type: "image", src: Easy, alt: "Easy", duration: 5000 },
-    { type: "image", src: Design, alt: "Design", duration: 5000 },
-    { type: "image", src: Production, alt: "Production", duration: 5000 },
+    { type: "video", src: PlanetX, alt: "PlanetX" },
+    { type: "video", src: Promotion, alt: "Promotion" },
+    { type: "image", src: Easy, alt: "Easy" },
+    { type: "image", src: Design, alt: "Design" },
+    { type: "image", src: Production, alt: "Production" },
   ];
 
   const swiperDataMobile = [
@@ -34,21 +34,18 @@ const SwiperHome = () => {
       type: "video",
       src: PlanetXMobile,
       alt: "PlanetXMobile",
-      duration: 10000,
     },
     {
       type: "video",
       src: PromotionMobile,
       alt: "PromotionMobile",
-      duration: 21000,
     },
-    { type: "image", src: EasyMobile, alt: "EasyMobile", duration: 5000 },
-    { type: "image", src: DesignMobile, alt: "DesignMobile", duration: 5000 },
+    { type: "image", src: EasyMobile, alt: "EasyMobile" },
+    { type: "image", src: DesignMobile, alt: "DesignMobile" },
     {
       type: "image",
       src: ProductionMobile,
       alt: "ProductionMobile",
-      duration: 5000,
     },
   ];
 
@@ -79,15 +76,27 @@ const SwiperHome = () => {
       <Swiper
         pagination={{ clickable: true }}
         navigation={!isMobile}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         loop={true}
+        autoplay={{
+          delay: 10000,
+          disableOnInteraction: false,
+        }}
         className="w-full xl:h-auto md:h-auto"
         onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-          startSlideTimer(swiper);
+          const video =
+            swiper.slides[swiper.activeIndex].querySelector("video");
+          if (video) video.play();
         }}
         onSlideChange={(swiper) => {
-          startSlideTimer(swiper);
+          swiper.slides.forEach((slide) => {
+            const video = slide.querySelector("video");
+            if (video) video.pause();
+          });
+
+          const video =
+            swiper.slides[swiper.activeIndex].querySelector("video");
+          if (video) video.play();
         }}
       >
         {dataToUse.map((item, index) => (

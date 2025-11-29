@@ -3,6 +3,7 @@ import TwoD from "../../assets/Home/TwoD.webp";
 import ThreeD from "../../assets/Home/ThreeD.webp";
 import Motion from "../../assets/Home/Motion.webp";
 import Photo from "../../assets/Home/Photo.webp";
+import BGHisto from "../../assets/Home/BG-Histo-PC.webp";
 import StarWhiteLeft from "../../assets/Home/StarWhiteLeft.webp";
 import StarWhiteRight from "../../assets/Home/StarWhiteRight.webp";
 
@@ -25,49 +26,69 @@ const OurCompany = () => {
         {t("our-company")}
       </h1>
       <div className="flex justify-center xl:pb-[73px] md:pb-[42px] xl:gap-24 md:gap-[33px] gap-[38px]">
-        <div>
+        <div className="relative">
           <img
             loading="lazy"
             src={TwoD}
             alt="TwoD"
-            className="xl:w-[140px] xl:h-[140px] md:w-[105px] md:h-[105px] w-[54px] h-[54px] hover:scale-110"
+            className="xl:w-[140px] xl:h-[140px] md:w-[105px] md:h-[105px] w-[54px] h-[54px] hover:scale-110 relative z-10"
           />
           <p className="text-center xl:text-xl text-[13px] text-[#241347]">
             {t("2d")}
           </p>
+          <img
+            src={BGHisto}
+            alt="BGHisto"
+            className="absolute top-0 scale-150"
+          />
         </div>
-        <div>
+        <div className="relative">
           <img
             loading="lazy"
             src={ThreeD}
             alt="ThreeD"
-            className="xl:w-[140px] xl:h-[140px] md:w-[105px] md:h-[105px] w-[54px] h-[54px] hover:scale-110"
+            className="xl:w-[140px] xl:h-[140px] md:w-[105px] md:h-[105px] w-[54px] h-[54px] hover:scale-110 relative z-10"
           />
           <p className="text-center xl:text-xl text-[13px] text-[#241347]">
             {t("3d")}
           </p>
+          <img
+            src={BGHisto}
+            alt="BGHisto"
+            className="absolute top-0 scale-150"
+          />
         </div>
-        <div>
+        <div className="relative">
           <img
             loading="lazy"
             src={Motion}
             alt="Motion"
-            className="xl:w-[140px] xl:h-[140px] md:w-[105px] md:h-[105px] w-[54px] h-[54px] hover:scale-110"
+            className="xl:w-[140px] xl:h-[140px] md:w-[105px] md:h-[105px] w-[54px] h-[54px] hover:scale-110 relative z-10"
           />
           <p className="text-center xl:text-xl text-[13px] text-[#241347]">
             {t("motion")}
           </p>
+          <img
+            src={BGHisto}
+            alt="BGHisto"
+            className="absolute top-0 scale-155"
+          />
         </div>
-        <div>
+        <div className="relative">
           <img
             loading="lazy"
             src={Photo}
             alt="Photo"
-            className="xl:w-[140px] xl:h-[140px] md:w-[105px] md:h-[105px] w-[54px] h-[54px] hover:scale-110"
+            className="xl:w-[140px] xl:h-[140px] md:w-[105px] md:h-[105px] w-[54px] h-[54px] hover:scale-110 relative z-10"
           />
           <p className="text-center xl:text-xl text-[13px] text-[#241347]">
             {t("photo")}
           </p>
+          <img
+            src={BGHisto}
+            alt="BGHisto"
+            className="absolute top-0 scale-150"
+          />
         </div>
       </div>
       <img
