@@ -15,7 +15,7 @@ import ShirtPatternDesign from "../pages/Services/ShirtPatternDesign";
 import MotionGraphic from "../pages/Services/MotionGraphic";
 import Photo from "../pages/Services/Photo";
 import Footer from "../Layouts/Footer";
-import ScrollToTop from "../Component/ScrollToTop";
+import ScrollToTop from "../component/ScrollToTop";
 
 const Layout = () => {
   return (

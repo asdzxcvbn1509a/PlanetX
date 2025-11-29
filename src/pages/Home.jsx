@@ -1,10 +1,10 @@
 import React from "react";
-import SwiperHome from "../Component/Home/SwiperHome";
-import OurCompany from "../Component/Home/OurCompany";
-import WeReady from "../Component/Home/WeReady";
-import SwiperHome2 from "../Component/Home/SwiperHome2";
-import EasyToOrder from "../Component/Home/EasyToOrder";
-import WeWillDrive from "../Component/Home/WeWillDrive";
+import SwiperHome from "../component/Home/SwiperHome";
+import OurCompany from "../component/Home/OurCompany";
+import WeReady from "../component/Home/WeReady";
+import SwiperHome2 from "../component/Home/SwiperHome2";
+import EasyToOrder from "../component/Home/EasyToOrder";
+import WeWillDrive from "../component/Home/WeWillDrive";
 
 const Home = () => {
   return (
