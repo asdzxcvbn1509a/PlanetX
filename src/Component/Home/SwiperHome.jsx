@@ -23,18 +23,33 @@ const SwiperHome = () => {
 
   const swiperData = [
     { type: "video", src: PlanetX, alt: "PlanetX", duration: 10000 },
-    { type: "video", src: Promotion, alt: "Promotion", duration: 10000 },
+    { type: "video", src: Promotion, alt: "Promotion", duration: 21000 },
     { type: "image", src: Easy, alt: "Easy", duration: 5000 },
     { type: "image", src: Design, alt: "Design", duration: 5000 },
     { type: "image", src: Production, alt: "Production", duration: 5000 },
   ];
 
   const swiperDataMobile = [
-    { type: "video", src: PlanetXMobile, alt: "PlanetXMobile", duration: 10000 },
-    { type: "video", src: PromotionMobile, alt: "PromotionMobile", duration: 10000 },
+    {
+      type: "video",
+      src: PlanetXMobile,
+      alt: "PlanetXMobile",
+      duration: 10000,
+    },
+    {
+      type: "video",
+      src: PromotionMobile,
+      alt: "PromotionMobile",
+      duration: 21000,
+    },
     { type: "image", src: EasyMobile, alt: "EasyMobile", duration: 5000 },
     { type: "image", src: DesignMobile, alt: "DesignMobile", duration: 5000 },
-    { type: "image", src: ProductionMobile, alt: "ProductionMobile", duration: 5000 },
+    {
+      type: "image",
+      src: ProductionMobile,
+      alt: "ProductionMobile",
+      duration: 5000,
+    },
   ];
 
   const dataToUse = isMobile ? swiperDataMobile : swiperData;
