@@ -11,7 +11,7 @@ const WeHappy = () => {
           Planet X
         </h1>
         <p className="xl:ml-[88px] font-light xl:text-[20px] text-base ml-[19px]">
-          Planet X {t("we")}
+          Planet X, {t("we")}
           <br />
           {t("whether-you")}
           <br />

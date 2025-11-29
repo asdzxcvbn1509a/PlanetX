@@ -14,7 +14,7 @@ const Footer = () => {
           </h1>
           <div className="xl:flex justify-center mb-[20px] md:mb-0">
             <p className="xl:text-xl text-[11px] font-light text-white">
-              Planet x Media Studio '
+              Planet X Media Studio '
             </p>
             <p className="xl:text-xl text-[11px] font-light text-white">
               {t("for-all")}'
@@ -53,7 +53,7 @@ const Footer = () => {
         style={{ fontFamily: '"Jost", sans-serif' }}
         className="xl:text-xl text-[10px] font-light bg-[#1C0F36] text-white text-center xl:py-6 py-[12px]"
       >
-        © 2025 Planet x Media Studio. All rights reserved.
+        © 2025 Planet X Media Studio. All rights reserved.
       </p>
     </div>
   );

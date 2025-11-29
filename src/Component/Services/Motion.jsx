@@ -37,7 +37,7 @@ const ShirtPattern = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
   return (
     <div>
       <h1 className="xl:text-xl text-base font-light md:font-normal xl:mt-[13px] md:mt-[9px] mt-[11px] mb-[7px] xl:mb-6 md:mb-[10px]">
-        {t("motion-graphic")}
+        {filteredSlides.length === 0 ? "" : t("motion-graphic")}
       </h1>
       <Swiper
         breakpoints={{

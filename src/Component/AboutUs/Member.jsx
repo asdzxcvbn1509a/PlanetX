@@ -56,7 +56,7 @@ const Member = () => {
         <PersonCard
           image={Jack}
           role={t("chief")}
-          name="นาย สฌาพล พลพิทักษ์"
+          name={t("sachapol")}
           id="67080500234"
         />
         <PersonCard

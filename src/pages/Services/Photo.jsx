@@ -37,7 +37,7 @@ const Photo = () => {
         </div>
         <div>
           <h1 className="xl:text-[32px] text-xl text-[#493678] xl:font-semibold md:font-normal font-semibold xl:mb-2 md:mb-4 mb-[11px]">
-            {t("design")}
+            {t("production")}
           </h1>
           <hr className="text-[#303030]" />
           <h1 className="xl:text-xl text-base xl:mt-[13px] xl:mb-6 md:my-[9px] my-[8px] font-light md:font-normal">

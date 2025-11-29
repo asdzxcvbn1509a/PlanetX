@@ -104,6 +104,37 @@ const TreeD = ({ checkedStyle, checkedPurpose, checkedPeriod }) => {
           </NavLink>
         </div>
       )}
+
+      <style>{`
+        .swiper-button-next,
+        .swiper-button-prev {
+          color: black;
+          font-size: 40px !important;
+          font-weight: extrabold !important;
+          transition: 0.3s;
+          width:40px;
+          height:40px;
+          padding:10px;
+          background-color: rgba(255, 255, 255, 0.5);
+          border: 1px solid black;
+          border-radius: 100%;
+          right: 9px !important;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .swiper-button-prev {
+        left:9px !important;}
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+          font-size: 22px; /* ขนาดลูกศร */
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: #303030 !important;
+        }
+        
+      `}</style>
     </div>
   );
 };

@@ -32,7 +32,7 @@ const WeWillDrive = () => {
         {t("but-it")}
         <br />
       </p>
-      <h2 className="text-[24px] mt-[24px] hidden xl:block">Planet x</h2>
+      <h2 className="text-[24px] mt-[24px] hidden xl:block">Planet X</h2>
       <img
         loading="lazy"
         src={SaturdayLeft}
