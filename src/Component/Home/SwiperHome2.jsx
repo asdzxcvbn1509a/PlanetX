@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Israel from "../../assets/Services/Photo/Israel.webp";
-import Sixtysix from "../../assets/Services/ShirtPattern/Sixtysix.webp";
+import Sixtysix from "../../assets/Services/ShirtPattern/SixtySix.webp";
 import Sleep from "../../assets/Services/Illustration/Sleep.webp";
 
 import { useTranslation } from "react-i18next";
